@@ -141,7 +141,7 @@ func handle_timeout() -> void:
 
 func game_over(use_scoreboard: bool = true) -> void:
 	if current_game != null:
-		microgame_slot.remove_child(current_game)
+		microgame_slot.remove_child.call_deferred(current_game)
 		current_game.storage.clear()
 		current_game.queue_free()
 		current_game = null

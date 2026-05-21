@@ -47,8 +47,9 @@ func _physics_process(_delta):
 
 func hit_player(_direction: Vector2):
 	was_hit.emit()
-	$HitSoundPlayer.play()
-	$HitAnimationPlayer.play("hit")
+	if get_tree() != null:
+		$HitSoundPlayer.play()
+		$HitAnimationPlayer.play("hit")
 
 func _on_invincibility_timer_timeout() -> void:
 	$HitAnimationPlayer.stop()

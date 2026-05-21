@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdgy134fdvdkn"]
+[gd_scene format=3 uid="uid://bdgy134fdvdkn"]
 
 [ext_resource type="Script" uid="uid://wbi3h78qfjef" path="res://framework/game_manager.gd" id="1_68sdn"]
 [ext_resource type="Texture2D" uid="uid://1a508bcv4xi5" path="res://assets/heart.png" id="2_5425x"]
@@ -30,19 +30,19 @@ colors = PackedColorArray(0, 0, 0, 0, 0.513726, 0.513726, 0.513726, 1, 0, 0, 0, 
 gradient = SubResource("Gradient_q6y0k")
 width = 20
 
-[node name="GameManager" type="Node2D" groups=["game-manager"]]
+[node name="GameManager" type="Node2D" unique_id=758723163 groups=["game-manager"]]
 script = ExtResource("1_68sdn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1747149782]
 layer = 3
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1646624827]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 28.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=693796652]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,20 +51,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Space0" type="Control" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Space0" type="Control" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1539312278]
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer" unique_id=747733194]
 layout_mode = 2
 
-[node name="Space1" type="Control" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Space1" type="Control" parent="CanvasLayer/Panel/HBoxContainer" unique_id=518161986]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TimerLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="TimerLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer" unique_id=226497047]
 layout_mode = 2
 
-[node name="TimerProgress" type="TextureProgressBar" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="TimerProgress" type="TextureProgressBar" parent="CanvasLayer/Panel/HBoxContainer" unique_id=2117884505]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 4
@@ -73,18 +73,18 @@ fill_mode = 4
 nine_patch_stretch = true
 texture_progress = SubResource("GradientTexture1D_pqoom")
 
-[node name="Space2" type="Control" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Space2" type="Control" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1275987135]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LifesLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="LifesLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer" unique_id=671282243]
 layout_mode = 2
 text = "Lifes:"
 
-[node name="HeartContainer" type="HBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="HeartContainer" type="HBoxContainer" parent="CanvasLayer/Panel/HBoxContainer" unique_id=462522693]
 layout_mode = 2
 
-[node name="Heart" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/HeartContainer"]
+[node name="Heart" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/HeartContainer" unique_id=214308244]
 visible = false
 texture_filter = 1
 layout_mode = 2
@@ -92,10 +92,10 @@ texture = ExtResource("2_5425x")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Space3" type="Control" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Space3" type="Control" parent="CanvasLayer/Panel/HBoxContainer" unique_id=976513894]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Panel/HBoxContainer" unique_id=580275832]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
@@ -105,16 +105,16 @@ texture_normal = SubResource("GradientTexture1D_q6y0k")
 texture_hover = SubResource("GradientTexture1D_m1iqg")
 stretch_mode = 0
 
-[node name="BeepSound" type="AudioStreamPlayer" parent="."]
+[node name="BeepSound" type="AudioStreamPlayer" parent="." unique_id=1987329527]
 stream = ExtResource("3_pqoom")
 bus = &"Ui"
 
-[node name="MicrogameSlot" type="Node" parent="."]
+[node name="MicrogameSlot" type="Node" parent="." unique_id=1266409341]
 
-[node name="Timer" type="Timer" parent="MicrogameSlot"]
+[node name="Timer" type="Timer" parent="MicrogameSlot" unique_id=1665717109]
 one_shot = true
 
-[node name="SwitchGameTimer" type="Timer" parent="MicrogameSlot"]
+[node name="SwitchGameTimer" type="Timer" parent="MicrogameSlot" unique_id=277202044]
 wait_time = 1.5
 one_shot = true
 
