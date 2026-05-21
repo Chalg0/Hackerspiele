@@ -25,16 +25,17 @@ const MICROGAME_PAGE_SIZE := 10
 @onready var marker_top_right: Marker3D = $Monitor/MarkerTopRight
 @onready var marker_bottom_right: Marker3D = $Monitor/MarkerBottomRight
 @onready var screen_layer: CanvasLayer = $Monitor/ScreenLayer
-@onready var screen: Panel = $Monitor/ScreenLayer/Screen
-@onready var label: Label = $Monitor/ScreenLayer/Screen/Label
-@onready var cursor_rect: Panel = $Monitor/ScreenLayer/Screen/CursorRect
-@onready var logo: Control = $Monitor/ScreenLayer/Screen/Logo
+@onready var sub_viewport: SubViewport = $Monitor/ScreenLayer/SubViewportContainer/SubViewport
+@onready var screen: Panel = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen
+@onready var label: Label = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/Label
+@onready var cursor_rect: Panel = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/CursorRect
+@onready var logo: Control = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/Logo
 @onready var poweroff_button: MeshInstance3D = $Monitor/PoweroffButton
-@onready var poweroff_button_ui: Button = $Monitor/ScreenLayer/Screen/PoweroffButton
+@onready var poweroff_button_ui: Button = $Monitor/ScreenLayer/PoweroffButton
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
-@onready var blink_timer: Timer = $Monitor/ScreenLayer/Screen/BlinkTimer
+@onready var blink_timer: Timer = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/BlinkTimer
 @onready var game_manager: GameManager = get_tree().get_first_node_in_group("game-manager")
-@onready var line_edit: LineEdit = $Monitor/ScreenLayer/Screen/LineEdit
+@onready var line_edit: LineEdit = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/LineEdit
 var print_time := 0.0
 var cursor := Vector2i(0, 0)
 var print_queue: Array[PrintEvent] = []
@@ -196,6 +197,8 @@ func pop_print_queue() -> void:
 							best_btm_button = neigh
 				btn1.node.focus_neighbor_top = (poweroff_button_ui if best_top_button == null else best_top_button.node).get_path()
 				btn1.node.focus_neighbor_bottom = (poweroff_button_ui if best_btm_button == null else best_btm_button.node).get_path()
+				if best_top_button == null: poweroff_button_ui.focus_neighbor_bottom = btn1.node.get_path()
+				if best_btm_button == null: poweroff_button_ui.focus_neighbor_top = btn1.node.get_path()
 		PrintEventType.SYNC:
 			event.val.sync.emit()
 
@@ -206,7 +209,7 @@ func create_terminal_button(text: String, onclick: Callable) -> Button:
 	button.size = bounds.size * Vector2(text.length(), 1.0)
 	button.tooltip_text = text
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	if get_viewport().gui_get_focus_owner() == null:
+	if get_viewport().gui_get_focus_owner() == null and sub_viewport.gui_get_focus_owner() == null:
 		button.grab_focus.call_deferred()
 	button.connect("pressed", func():
 		game_manager.beep_sound.play()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://ck0n3e7m71aoy"]
+[gd_scene format=3 uid="uid://ck0n3e7m71aoy"]
 
 [ext_resource type="Script" uid="uid://btgg6ulu6in8t" path="res://framework/title_screen.gd" id="1_f6akd"]
 [ext_resource type="PackedScene" uid="uid://1ju8eyujir3q" path="res://framework/models/monitor.glb" id="1_m3mpr"]
 [ext_resource type="Theme" uid="uid://fdu16ilqs3a5" path="res://assets/themes/terminal.tres" id="3_4toer"]
 [ext_resource type="FontFile" uid="uid://cuoy0amwy2mxc" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="3_th5dg"]
+[ext_resource type="Shader" uid="uid://dkq8lgxj4eb0w" path="res://framework/shaders/crt_effect.gdshader" id="4_ekofo"]
 [ext_resource type="ArrayMesh" uid="uid://cr7acoty3n02c" path="res://framework/models/mate.obj" id="4_sndid"]
 [ext_resource type="Texture2D" uid="uid://44wlppmlhhw5" path="res://assets/logos/logo.png" id="5_4xr2k"]
 [ext_resource type="Shader" uid="uid://7ojoo23teqvk" path="res://framework/shaders/glass.tres" id="5_vromf"]
@@ -15,6 +16,33 @@
 background_energy_multiplier = 10.0
 ambient_light_color = Color(0.944169, 0.797791, 0.702215, 1)
 ambient_light_energy = 14.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmn24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bbnd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekofo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jn8m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yy6u4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xr2k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4toer"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qgvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vromf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sndid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4toer"]
+bg_color = Color(0, 0, 0, 0)
+shadow_size = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekofo"]
+shader = ExtResource("4_ekofo")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6akd"]
 bg_color = Color(0, 0, 0, 1)
@@ -32,30 +60,6 @@ shadow_offset = Vector2(0, 0)
 bg_color = Color(0.258552, 0.668512, 0.157625, 1)
 shadow_color = Color(0.258552, 0.668512, 0.157625, 1)
 shadow_size = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4toer"]
-bg_color = Color(0, 0, 0, 0)
-shadow_size = 1
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sndid"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vromf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qgvj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4toer"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xr2k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yy6u4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jn8m"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekofo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2bbnd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmn24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xr2k"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -96,32 +100,72 @@ top_radius = 0.54
 bottom_radius = 0.54
 height = 1.8
 
-[node name="TitleScreen" type="Node3D"]
+[node name="TitleScreen" type="Node3D" unique_id=826316367]
 script = ExtResource("1_f6akd")
 PRINT_TIMEOUT = 0.01
 TERM_W = 38
 TERM_H = 14
 
-[node name="Camera" type="Camera3D" parent="."]
+[node name="Camera" type="Camera3D" parent="." unique_id=583562549]
 transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.59039e-09, -4.30473e-08, 7.32191, 2.65801, 0)
 projection = 1
 size = 2.26
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1004119598]
 environment = SubResource("Environment_0qgvj")
 
-[node name="Monitor" parent="." instance=ExtResource("1_m3mpr")]
+[node name="Monitor" parent="." unique_id=1987922712 instance=ExtResource("1_m3mpr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)
 
-[node name="ScreenLayer" type="CanvasLayer" parent="Monitor"]
+[node name="ScreenLayer" type="CanvasLayer" parent="Monitor" unique_id=460234054]
 
-[node name="Screen" type="Panel" parent="Monitor/ScreenLayer"]
+[node name="Label" type="Label" parent="Monitor/ScreenLayer" unique_id=376397318]
+offset_left = -171.0
+offset_top = 554.0
+offset_right = 207.0
+offset_bottom = 773.0
+theme = ExtResource("6_7jn8m")
+text = "Controls:
+Movement: WASD / D-pad
+Submit: Space / Enter / Bottom Button"
+
+[node name="PoweroffButton" type="Button" parent="Monitor/ScreenLayer" unique_id=1613275055]
+offset_left = 421.0
+offset_top = 621.0
+offset_right = 461.0
+offset_bottom = 671.0
+tooltip_text = "Exit Game"
+focus_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fmn24")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2bbnd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ekofo")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7jn8m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yy6u4")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4xr2k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4toer")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0qgvj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vromf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sndid")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4toer")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Monitor/ScreenLayer" unique_id=11374732]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_ekofo")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Monitor/ScreenLayer/SubViewportContainer" unique_id=231318317]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Screen" type="Panel" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport" unique_id=1391095641]
 offset_right = 512.0
 offset_bottom = 512.0
 theme = ExtResource("3_4toer")
 theme_override_styles/panel = SubResource("StyleBoxFlat_f6akd")
 
-[node name="Label" type="Label" parent="Monitor/ScreenLayer/Screen"]
+[node name="Label" type="Label" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen" unique_id=866100964]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -130,37 +174,17 @@ offset_bottom = 504.0
 text = "Häckerspiele"
 label_settings = SubResource("LabelSettings_th5dg")
 
-[node name="CursorRect" type="Panel" parent="Monitor/ScreenLayer/Screen"]
+[node name="CursorRect" type="Panel" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen" unique_id=1224812656]
 layout_mode = 0
 offset_right = 13.0
 offset_bottom = 5.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_th5dg")
 
-[node name="PoweroffButton" type="Button" parent="Monitor/ScreenLayer/Screen"]
-layout_mode = 0
-offset_left = 421.0
-offset_top = 621.0
-offset_right = 461.0
-offset_bottom = 671.0
-tooltip_text = "Exit Game"
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_4toer")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sndid")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_vromf")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0qgvj")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4toer")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4xr2k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_yy6u4")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7jn8m")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ekofo")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2bbnd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_fmn24")
-
-[node name="BlinkTimer" type="Timer" parent="Monitor/ScreenLayer/Screen"]
+[node name="BlinkTimer" type="Timer" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen" unique_id=516611108]
 wait_time = 0.3
 autostart = true
 
-[node name="Logo" type="PanelContainer" parent="Monitor/ScreenLayer/Screen"]
+[node name="Logo" type="PanelContainer" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen" unique_id=803747888]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -172,13 +196,13 @@ offset_bottom = 109.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4xr2k")
 
-[node name="TextureRect" type="TextureRect" parent="Monitor/ScreenLayer/Screen/Logo"]
+[node name="TextureRect" type="TextureRect" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/Logo" unique_id=1507570256]
 layout_mode = 2
 texture = ExtResource("5_4xr2k")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="LineEdit" type="LineEdit" parent="Monitor/ScreenLayer/Screen"]
+[node name="LineEdit" type="LineEdit" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen" unique_id=601356862]
 visible = false
 layout_mode = 0
 offset_left = 232.0
@@ -196,62 +220,52 @@ selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Label" type="Label" parent="Monitor/ScreenLayer"]
-offset_left = -171.0
-offset_top = 554.0
-offset_right = 207.0
-offset_bottom = 773.0
-theme = ExtResource("6_7jn8m")
-text = "Controls:
-Movement: WASD / D-pad
-Submit: Space / Enter / Bottom Button"
-
-[node name="MarkerTopLeft" type="Marker3D" parent="Monitor"]
+[node name="MarkerTopLeft" type="Marker3D" parent="Monitor" unique_id=1617491833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732, 2.73, 0.93)
 
-[node name="MarkerTopRight" type="Marker3D" parent="Monitor"]
+[node name="MarkerTopRight" type="Marker3D" parent="Monitor" unique_id=652236066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731967, 2.73035, 0.93)
 
-[node name="MarkerBottomRight" type="Marker3D" parent="Monitor"]
+[node name="MarkerBottomRight" type="Marker3D" parent="Monitor" unique_id=2083565031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.732, 1.508, 0.93)
 
-[node name="PoweroffButton" type="MeshInstance3D" parent="Monitor"]
+[node name="PoweroffButton" type="MeshInstance3D" parent="Monitor" unique_id=2050862607]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.529363, 1.20559, 0.998548)
 mesh = SubResource("QuadMesh_sndid")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_th5dg")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1097819653]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28281, 3.92547, 1.97244)
 light_energy = 5.115
 omni_range = 10.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1901595826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71499, 0.982625, -2.08091)
 light_energy = 0.8
 omni_range = 10.0
 
-[node name="Tisch" type="MeshInstance3D" parent="."]
+[node name="Tisch" type="MeshInstance3D" parent="." unique_id=778200950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371036, 0)
 mesh = SubResource("QuadMesh_vromf")
 surface_material_override/0 = SubResource("StandardMaterial3D_sndid")
 
-[node name="Mate" type="MeshInstance3D" parent="."]
+[node name="Mate" type="MeshInstance3D" parent="." unique_id=699001436]
 transform = Transform3D(-0.0446442, 0, -0.528116, 0, 0.53, 0, 0.528116, 0, -0.0446442, 2.35392, 0.42596, 1.58301)
 mesh = ExtResource("4_sndid")
 surface_material_override/0 = SubResource("ShaderMaterial_4xr2k")
 
-[node name="MateInhalt" type="MeshInstance3D" parent="Mate"]
+[node name="MateInhalt" type="MeshInstance3D" parent="Mate" unique_id=346135783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.363, 0)
 mesh = SubResource("CylinderMesh_vromf")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=778224784]
 stream = ExtResource("9_yy6u4")
 autoplay = true
 bus = &"Music"
 
-[connection signal="mouse_entered" from="Monitor/ScreenLayer/Screen/PoweroffButton" to="." method="_on_poweroff_button_mouse_entered"]
-[connection signal="mouse_exited" from="Monitor/ScreenLayer/Screen/PoweroffButton" to="." method="_on_poweroff_button_mouse_exited"]
-[connection signal="pressed" from="Monitor/ScreenLayer/Screen/PoweroffButton" to="." method="_on_poweroff_button_pressed"]
-[connection signal="timeout" from="Monitor/ScreenLayer/Screen/BlinkTimer" to="." method="_on_blink_timer_timeout"]
-[connection signal="text_changed" from="Monitor/ScreenLayer/Screen/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="mouse_entered" from="Monitor/ScreenLayer/PoweroffButton" to="." method="_on_poweroff_button_mouse_entered"]
+[connection signal="mouse_exited" from="Monitor/ScreenLayer/PoweroffButton" to="." method="_on_poweroff_button_mouse_exited"]
+[connection signal="pressed" from="Monitor/ScreenLayer/PoweroffButton" to="." method="_on_poweroff_button_pressed"]
+[connection signal="timeout" from="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/BlinkTimer" to="." method="_on_blink_timer_timeout"]
+[connection signal="text_changed" from="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/LineEdit" to="." method="_on_line_edit_text_changed"]
