@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqrc3r1bij4br"]
+[gd_scene format=3 uid="uid://cqrc3r1bij4br"]
 
 [ext_resource type="Script" uid="uid://bc8xbow4uifhy" path="res://microgames/alien_attack/main.gd" id="1_6ofhi"]
 [ext_resource type="Texture2D" uid="uid://d3cawymryc8q5" path="res://microgames/alien_attack/assets/textures/bg.png" id="1_wqpsg"]
@@ -10,37 +10,37 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v1cy"]
 size = Vector2(210, 887)
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=326982985]
 script = ExtResource("1_6ofhi")
 time = 20.0
 survival = true
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2131296114]
 offset_right = 1278.0
 offset_bottom = 719.0
 texture = ExtResource("1_wqpsg")
 stretch_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("2_aqcy6")]
+[node name="Player" parent="." unique_id=1074652063 instance=ExtResource("2_aqcy6")]
 position = Vector2(101, 378)
 
-[node name="Aliens" type="Node2D" parent="."]
+[node name="Aliens" type="Node2D" parent="." unique_id=631369362]
 
-[node name="AlienSpawner" parent="." instance=ExtResource("4_nn44e")]
+[node name="AlienSpawner" parent="." unique_id=2123454344 instance=ExtResource("4_nn44e")]
 
-[node name="Deathzone" type="Area2D" parent="."]
+[node name="Deathzone" type="Area2D" parent="." unique_id=1807332685]
 collision_layer = 8
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone" unique_id=1229534441]
 position = Vector2(-172, 368)
 shape = SubResource("RectangleShape2D_2v1cy")
 
-[node name="EnemyHitSound" type="AudioStreamPlayer" parent="."]
+[node name="EnemyHitSound" type="AudioStreamPlayer" parent="." unique_id=1476824838]
 stream = ExtResource("6_gi4xq")
 bus = &"Sfx"
 
-[node name="PlayerTookDamageSound" type="AudioStreamPlayer" parent="."]
+[node name="PlayerTookDamageSound" type="AudioStreamPlayer" parent="." unique_id=32320697]
 stream = ExtResource("7_weypj")
 bus = &"Sfx"
 

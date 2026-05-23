@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://db1i7vju5bg68"]
+[gd_scene format=3 uid="uid://db1i7vju5bg68"]
 
 [ext_resource type="Script" uid="uid://be0bwhoa0g7g8" path="res://microgames/questions/entities/door.gd" id="1_0dpev"]
 [ext_resource type="Texture2D" uid="uid://esuw27dlhoxa" path="res://assets/logos/kit_gamejam.png" id="2_car8a"]
@@ -18,24 +18,24 @@ border_blend = true
 [sub_resource type="LabelSettings" id="LabelSettings_0dpev"]
 font_size = 25
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="Area2D" unique_id=1874686627]
 z_index = 1
 script = ExtResource("1_0dpev")
 
-[node name="Correct" type="Sprite2D" parent="."]
+[node name="Correct" type="Sprite2D" parent="." unique_id=1774315370]
 scale = Vector2(0.085, 0.085)
 texture = ExtResource("2_car8a")
 
-[node name="False" type="Sprite2D" parent="."]
+[node name="False" type="Sprite2D" parent="." unique_id=725327667]
 scale = Vector2(3, 3)
 texture = ExtResource("3_cdaxf")
 
-[node name="DoorSprite" type="Sprite2D" parent="."]
+[node name="DoorSprite" type="Sprite2D" parent="." unique_id=1009738702]
 modulate = Color(0.506292, 0.266202, 0.151854, 1)
 scale = Vector2(140, 146.591)
 texture = SubResource("CanvasTexture_2q8u5")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1167040463]
 offset_left = -49.0
 offset_top = -73.0
 offset_right = 51.0
@@ -43,7 +43,7 @@ offset_bottom = 77.0
 theme_override_styles/focus = SubResource("StyleBoxFlat_0dpev")
 flat = true
 
-[node name="Answer" type="Label" parent="."]
+[node name="Answer" type="Label" parent="." unique_id=1753319384]
 offset_left = -66.0
 offset_top = -18.0
 offset_right = 64.0

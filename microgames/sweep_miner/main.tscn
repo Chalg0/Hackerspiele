@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1tj2tchnh5d1"]
+[gd_scene format=3 uid="uid://d1tj2tchnh5d1"]
 
 [ext_resource type="Script" uid="uid://8fncmn1gxeq8" path="res://microgames/sweep_miner/main.gd" id="1_6g5k8"]
 [ext_resource type="FontFile" uid="uid://sa1ml6cgmorr" path="res://assets/fonts/Share Tech Mono/ShareTechMono-Regular.ttf" id="2_6rdi2"]
@@ -12,36 +12,36 @@ bg_color = Color(0, 0, 0, 1)
 font = ExtResource("2_6rdi2")
 font_size = 30
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1030233762]
 script = ExtResource("1_6g5k8")
 W = 7
 H = 7
 bomb_count = 3
 time = 16.0
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=345542799]
 
-[node name="Panel" type="Panel" parent="CanvasLayer2"]
+[node name="Panel" type="Panel" parent="CanvasLayer2" unique_id=634644546]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1521319578]
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer" unique_id=386901578]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/AspectRatioContainer"]
+[node name="Panel" type="Panel" parent="CanvasLayer/AspectRatioContainer" unique_id=1389232807]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6g5k8")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/AspectRatioContainer/Panel" unique_id=446509650]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,14 +51,14 @@ grow_vertical = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 75
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer" unique_id=1238075845]
 layout_mode = 2
 
-[node name="PanelContainer" type="Panel" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer/AspectRatioContainer"]
+[node name="PanelContainer" type="Panel" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer/AspectRatioContainer" unique_id=1598103403]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6g5k8")
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer/AspectRatioContainer/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer/AspectRatioContainer/PanelContainer" unique_id=10715194]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,7 +69,7 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 9
 
-[node name="BombCount" type="Label" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer/AspectRatioContainer/PanelContainer"]
+[node name="BombCount" type="Label" parent="CanvasLayer/AspectRatioContainer/Panel/MarginContainer/AspectRatioContainer/PanelContainer" unique_id=1906457273]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

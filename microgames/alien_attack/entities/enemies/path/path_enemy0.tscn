@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://sr2csdqw3aea"]
+[gd_scene format=3 uid="uid://sr2csdqw3aea"]
 
 [ext_resource type="PackedScene" uid="uid://un4p7mvt70kv" path="res://microgames/alien_attack/entities/enemies/path/path_enemy.tscn" id="1_8w1vt"]
 
@@ -8,10 +8,10 @@ _data = {
 }
 point_count = 5
 
-[node name="PathEnemy" instance=ExtResource("1_8w1vt")]
+[node name="PathEnemy" unique_id=1795280394 instance=ExtResource("1_8w1vt")]
 curve = SubResource("Curve2D_8w1vt")
 
 [node name="PathFollow2D" parent="." index="0"]
-position = Vector2(1554, 45)
-rotation = -0.0229845
+position = Vector2(1554.0002, 45.000004)
+rotation = -0.022984536
 progress = 1898.36

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2ydpr2fenu0a"]
+[gd_scene format=3 uid="uid://d2ydpr2fenu0a"]
 
 [ext_resource type="Script" uid="uid://bq4d2xm4hm2l7" path="res://microgames/martian_mike/entities/traps/trap.gd" id="1_cxpx7"]
 [ext_resource type="Texture2D" uid="uid://cbgyp3b5diwwr" path="res://microgames/martian_mike/assets/textures/other/Saw.png" id="2_477jt"]
@@ -44,25 +44,23 @@ _data = {
 &"spin": SubResource("Animation_vnaks")
 }
 
-[node name="Saw" type="Node2D" groups=["traps"]]
+[node name="Saw" type="Node2D" unique_id=1604777462 groups=["traps"]]
 script = ExtResource("1_cxpx7")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." unique_id=101764804]
 collision_layer = 8
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox" unique_id=272815386]
 texture = ExtResource("2_477jt")
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1172578941]
 shape = SubResource("CircleShape2D_wmith")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1299213118]
 root_node = NodePath("../Hitbox/Sprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_qipkw")
-}
-autoplay = "spin"
+libraries/ = SubResource("AnimationLibrary_qipkw")
+autoplay = &"spin"
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_player_entered"]

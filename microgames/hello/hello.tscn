@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://chuo7jsb2b1sa"]
+[gd_scene format=3 uid="uid://chuo7jsb2b1sa"]
 
 [ext_resource type="Texture2D" uid="uid://cye3rwdrlnipf" path="res://microgames/hello/textures/window_borders.png" id="2_1rx3i"]
 [ext_resource type="FontFile" uid="uid://cmrep5rgp6jkj" path="res://microgames/hello/fonts/SSERIFF.ttf" id="2_8x2b2"]
@@ -50,14 +50,14 @@ font = ExtResource("2_8x2b2")
 font_size = 26
 font_color = Color(0, 0, 0, 1)
 
-[node name="Hello" type="Node2D"]
+[node name="Hello" type="Node2D" unique_id=1221281606]
 script = ExtResource("2_gejsk")
 metadata/_edit_vertical_guides_ = [1298.0]
 metadata/_edit_horizontal_guides_ = [728.0]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1561183353]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=45508875]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dnqod")
 
-[node name="ScreenVContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="ScreenVContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=846853603]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,26 +74,26 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/ScreenVContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/ScreenVContainer" unique_id=212527287]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="WindowPanel" type="PanelContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer"]
+[node name="WindowPanel" type="PanelContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer" unique_id=715096578]
 texture_filter = 1
 custom_minimum_size = Vector2(460, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_0ha24")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel" unique_id=2090310068]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer" unique_id=298111685]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_re64l")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel" unique_id=576782489]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,11 +102,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Spacer1" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer"]
+[node name="Spacer1" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer" unique_id=2146117933]
 custom_minimum_size = Vector2(6, 0)
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer" unique_id=82498128]
 custom_minimum_size = Vector2(32, 28)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -114,80 +114,80 @@ size_flags_vertical = 4
 texture = ExtResource("4_8x2b2")
 expand_mode = 3
 
-[node name="Spacer2" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer"]
+[node name="Spacer2" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer" unique_id=30152186]
 custom_minimum_size = Vector2(6, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/Panel/HBoxContainer" unique_id=1550628012]
 layout_mode = 2
 text = "Hurry Up!!!"
 label_settings = SubResource("LabelSettings_ys4ov")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer" unique_id=1325061942]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer" unique_id=252417932]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="Control" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1045857327]
 layout_mode = 2
 
-[node name="HelloLabel" type="Label" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="HelloLabel" type="Label" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=741649250]
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 text = "Dummy Text"
 label_settings = SubResource("LabelSettings_1rx3i")
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer" unique_id=624704216]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 2
 
-[node name="HelloButton" type="Button" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="HelloButton" type="Button" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=472513211]
 custom_minimum_size = Vector2(100, 46)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "The tooltip won't help you on this one"
 mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8x2b2")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = ExtResource("5_1rx3i")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_1rx3i")
-theme_override_styles/hover_pressed = ExtResource("5_1rx3i")
-theme_override_styles/hover_mirrored = ExtResource("5_1rx3i")
-theme_override_styles/hover = ExtResource("5_1rx3i")
-theme_override_styles/pressed_mirrored = ExtResource("5_1rx3i")
-theme_override_styles/pressed = ExtResource("5_1rx3i")
-theme_override_styles/normal_mirrored = ExtResource("5_1rx3i")
 theme_override_styles/normal = ExtResource("5_1rx3i")
+theme_override_styles/normal_mirrored = ExtResource("5_1rx3i")
+theme_override_styles/pressed = ExtResource("5_1rx3i")
+theme_override_styles/pressed_mirrored = ExtResource("5_1rx3i")
+theme_override_styles/hover = ExtResource("5_1rx3i")
+theme_override_styles/hover_mirrored = ExtResource("5_1rx3i")
+theme_override_styles/hover_pressed = ExtResource("5_1rx3i")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_1rx3i")
+theme_override_styles/focus = ExtResource("5_1rx3i")
 text = "Button"
 
-[node name="Spacer" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1509001849]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/CenterContainer/WindowPanel/VBoxContainer/VBoxContainer" unique_id=1898082089]
 layout_mode = 2
 
-[node name="MenuBar" type="Panel" parent="CanvasLayer/Panel/ScreenVContainer"]
+[node name="MenuBar" type="Panel" parent="CanvasLayer/Panel/ScreenVContainer" unique_id=2028360999]
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gejsk")
 
-[node name="MenuBarBorder" type="Panel" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar"]
+[node name="MenuBarBorder" type="Panel" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar" unique_id=1566417310]
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 1
 anchors_preset = 10
@@ -195,7 +195,7 @@ anchor_right = 1.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_33vh6")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar" unique_id=1352103107]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 1
 anchors_preset = 12
@@ -206,12 +206,12 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="Spacer" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer"]
+[node name="Spacer" type="Control" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer" unique_id=57731668]
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer"]
+[node name="Button" type="Button" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer" unique_id=379502555]
 texture_filter = 1
 custom_minimum_size = Vector2(108, 44)
 layout_mode = 2
@@ -219,7 +219,7 @@ size_flags_vertical = 4
 theme_override_styles/disabled = ExtResource("5_1rx3i")
 disabled = true
 
-[node name="Icon" type="TextureRect" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer/Button"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer/Button" unique_id=2134312363]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
@@ -228,7 +228,7 @@ offset_bottom = 36.0
 texture = ExtResource("4_8x2b2")
 expand_mode = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer/Button"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/ScreenVContainer/MenuBar/HBoxContainer/Button" unique_id=1770774526]
 layout_mode = 0
 offset_left = 46.0
 offset_top = 10.0

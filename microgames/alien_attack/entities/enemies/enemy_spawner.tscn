@@ -1,34 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0tn7qebqrmiy"]
+[gd_scene format=3 uid="uid://c0tn7qebqrmiy"]
 
 [ext_resource type="Script" uid="uid://6ad35hve5ish" path="res://microgames/alien_attack/entities/enemies/enemy_spawner.gd" id="1_46kv7"]
 
-[node name="EnemySpawner" type="Node2D"]
+[node name="EnemySpawner" type="Node2D" unique_id=2086190024]
 script = ExtResource("1_46kv7")
 
-[node name="SpawnPositions" type="Node2D" parent="."]
+[node name="SpawnPositions" type="Node2D" parent="." unique_id=1967927500]
 
-[node name="Spawn01" type="Marker2D" parent="SpawnPositions"]
+[node name="Spawn01" type="Marker2D" parent="SpawnPositions" unique_id=1534658712]
 position = Vector2(1350, 50)
 
-[node name="Spawn02" type="Marker2D" parent="SpawnPositions"]
+[node name="Spawn02" type="Marker2D" parent="SpawnPositions" unique_id=680537426]
 position = Vector2(1350, 175)
 
-[node name="Spawn03" type="Marker2D" parent="SpawnPositions"]
+[node name="Spawn03" type="Marker2D" parent="SpawnPositions" unique_id=951373882]
 position = Vector2(1350, 300)
 
-[node name="Spawn04" type="Marker2D" parent="SpawnPositions"]
+[node name="Spawn04" type="Marker2D" parent="SpawnPositions" unique_id=1567306901]
 position = Vector2(1350, 425)
 
-[node name="Spawn05" type="Marker2D" parent="SpawnPositions"]
+[node name="Spawn05" type="Marker2D" parent="SpawnPositions" unique_id=2127673780]
 position = Vector2(1350, 550)
 
-[node name="Spawn06" type="Marker2D" parent="SpawnPositions"]
+[node name="Spawn06" type="Marker2D" parent="SpawnPositions" unique_id=424373007]
 position = Vector2(1350, 675)
 
-[node name="EnemySpawnTimeout" type="Timer" parent="."]
+[node name="EnemySpawnTimeout" type="Timer" parent="." unique_id=369599703]
 autostart = true
 
-[node name="PathEnemySpawnTimeout" type="Timer" parent="."]
+[node name="PathEnemySpawnTimeout" type="Timer" parent="." unique_id=2133595665]
 wait_time = 2.0
 autostart = true
 

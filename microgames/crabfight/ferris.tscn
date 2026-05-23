@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://03xsx5o3mjgs"]
+[gd_scene format=3 uid="uid://03xsx5o3mjgs"]
 
 [ext_resource type="Texture2D" uid="uid://dqxfw33uitdld" path="res://microgames/crabfight/assets/ferris.svg" id="1_1k1to"]
 [ext_resource type="Script" uid="uid://ns3oc2lxqayg" path="res://microgames/crabfight/ferris.gd" id="1_o23ju"]
@@ -12,6 +12,33 @@ size = Vector2(851.25, 536.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqtlk"]
 size = Vector2(291, 124)
+
+[sub_resource type="Animation" id="Animation_xqtlk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_kqyc8"]
 resource_name = "stab"
@@ -41,37 +68,25 @@ tracks/1/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_xqtlk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vth1"]
+_data = {
+&"RESET": SubResource("Animation_xqtlk"),
+&"stab": SubResource("Animation_kqyc8")
+}
+
+[sub_resource type="Animation" id="Animation_lbdor"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D:position")
+tracks/0/path = NodePath("Marker:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vth1"]
-_data = {
-&"RESET": SubResource("Animation_xqtlk"),
-&"stab": SubResource("Animation_kqyc8")
+"values": [Vector2(-2, -494)]
 }
 
 [sub_resource type="Animation" id="Animation_5vth1"]
@@ -91,25 +106,25 @@ tracks/0/keys = {
 "values": [Vector2(-2, -494), Vector2(-2, -600), Vector2(-2, -494)]
 }
 
-[sub_resource type="Animation" id="Animation_lbdor"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkcvu"]
+_data = {
+&"RESET": SubResource("Animation_lbdor"),
+&"hover": SubResource("Animation_5vth1")
+}
+
+[sub_resource type="Animation" id="Animation_l43ne"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Marker:position")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-2, -494)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkcvu"]
-_data = {
-&"RESET": SubResource("Animation_lbdor"),
-&"hover": SubResource("Animation_5vth1")
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_bkcvu"]
@@ -128,90 +143,69 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_l43ne"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_le5gq"]
 _data = {
 &"RESET": SubResource("Animation_l43ne"),
 &"invincible": SubResource("Animation_bkcvu")
 }
 
-[node name="Ferris" type="CharacterBody2D"]
+[node name="Ferris" type="CharacterBody2D" unique_id=943287588]
 slide_on_ceiling = false
 floor_stop_on_slope = false
 platform_on_leave = 1
 safe_margin = 1.0
 script = ExtResource("1_o23ju")
 
-[node name="RightArm" parent="." instance=ExtResource("2_5ogrn")]
+[node name="RightArm" parent="." unique_id=1493970936 instance=ExtResource("2_5ogrn")]
 position = Vector2(476, -74)
 
-[node name="LeftArm" parent="." instance=ExtResource("2_5ogrn")]
+[node name="LeftArm" parent="." unique_id=729408970 instance=ExtResource("2_5ogrn")]
 position = Vector2(-460, -80)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="RightLeg" parent="." instance=ExtResource("4_e8puc")]
+[node name="RightLeg" parent="." unique_id=1363302258 instance=ExtResource("4_e8puc")]
 position = Vector2(384, 179)
 
-[node name="LeftLeg" parent="." instance=ExtResource("4_e8puc")]
+[node name="LeftLeg" parent="." unique_id=128911824 instance=ExtResource("4_e8puc")]
 position = Vector2(-370, 176)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=626869645]
 position = Vector2(-0.625, 37.75)
 shape = SubResource("RectangleShape2D_e8puc")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=2032079719]
 
-[node name="Knife" type="Sprite2D" parent="Area2D"]
+[node name="Knife" type="Sprite2D" parent="Area2D" unique_id=1166870577]
 position = Vector2(495.48, -13.3)
 scale = Vector2(0.52, 0.52)
 texture = ExtResource("5_kqyc8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1854781619]
 position = Vector2(613.98, -15.3)
 shape = SubResource("RectangleShape2D_xqtlk")
 disabled = true
 
-[node name="Ferris" type="Sprite2D" parent="."]
+[node name="Ferris" type="Sprite2D" parent="." unique_id=327127334]
 texture = ExtResource("1_1k1to")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5vth1")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1364937435]
+libraries/ = SubResource("AnimationLibrary_5vth1")
 
-[node name="Marker" type="Sprite2D" parent="."]
+[node name="Marker" type="Sprite2D" parent="." unique_id=2046386414]
 visible = false
 position = Vector2(-2, -494)
 texture = ExtResource("6_xqtlk")
 
-[node name="HoverPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_bkcvu")
-}
-autoplay = "hover"
+[node name="HoverPlayer" type="AnimationPlayer" parent="." unique_id=1824794455]
+libraries/ = SubResource("AnimationLibrary_bkcvu")
+autoplay = &"hover"
 speed_scale = 1.8
 
-[node name="Invincibility" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_le5gq")
-}
+[node name="Invincibility" type="AnimationPlayer" parent="." unique_id=6472352]
+libraries/ = SubResource("AnimationLibrary_le5gq")
 speed_scale = 1.5
 
 [connection signal="body_entered" from="Area2D" to="." method="got_hit"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c7xru3o3piygv"]
+[gd_scene format=3 uid="uid://c7xru3o3piygv"]
 
 [ext_resource type="Script" uid="uid://cpxojq12yxlll" path="res://microgames/jeff_encounter/entities/Player.gd" id="1_n0o0d"]
 [ext_resource type="Texture2D" uid="uid://bvraqbkf5ijs1" path="res://microgames/jeff_encounter/assets/textures/Jeff.png" id="2_8uldn"]
@@ -180,66 +180,60 @@ damping_min = 1.0
 damping_max = 2.0
 scale_min = 0.2
 
-[node name="Jeff" type="CharacterBody2D"]
+[node name="Jeff" type="CharacterBody2D" unique_id=1487142009]
 collision_layer = 5
 motion_mode = 1
 script = ExtResource("1_n0o0d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284151197]
 position = Vector2(1.5, 4)
 shape = SubResource("RectangleShape2D_gdro1")
 
-[node name="Character" type="Sprite2D" parent="."]
+[node name="Character" type="Sprite2D" parent="." unique_id=489628229]
 texture = ExtResource("2_8uldn")
 hframes = 4
 vframes = 2
 frame = 1
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." unique_id=570883771]
 collision_layer = 5
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=119267004]
 shape = SubResource("CapsuleShape2D_ap1vd")
 
-[node name="DestinationDetector" type="Area2D" parent="."]
+[node name="DestinationDetector" type="Area2D" parent="." unique_id=935904255]
 collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DestinationDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestinationDetector" unique_id=197856562]
 shape = SubResource("CircleShape2D_m6hdk")
 
-[node name="InvincibilityTimer" type="Timer" parent="."]
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=1415765653]
 wait_time = 1.2
 one_shot = true
 
-[node name="DashTimer" type="Timer" parent="."]
+[node name="DashTimer" type="Timer" parent="." unique_id=25185588]
 wait_time = 0.05
 
-[node name="DashCooldownTimer" type="Timer" parent="."]
+[node name="DashCooldownTimer" type="Timer" parent="." unique_id=513361841]
 wait_time = 0.85
 one_shot = true
 
-[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2704f")
-}
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="." unique_id=713526247]
+libraries/ = SubResource("AnimationLibrary_2704f")
 
-[node name="WalkAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_57kes")
-}
+[node name="WalkAnimationPlayer" type="AnimationPlayer" parent="." unique_id=142766466]
+libraries/ = SubResource("AnimationLibrary_57kes")
 
-[node name="DustFadeAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_blxem")
-}
+[node name="DustFadeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1955057840]
+libraries/ = SubResource("AnimationLibrary_blxem")
 
-[node name="HitSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HitSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1072385253]
 stream = ExtResource("3_ynwqt")
 volume_db = 5.0
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=128774917]
 modulate = Color(1, 1, 1, 0.709804)
 emitting = false
 texture = ExtResource("4_1pus1")
@@ -249,15 +243,15 @@ explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_abkiw")
 
-[node name="DashSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="DashSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1460995787]
 stream = ExtResource("5_xpw1j")
 volume_db = -25.0
 
-[node name="PackageDeliveredSoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="PackageDeliveredSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1686853446]
 stream = ExtResource("6_begy2")
 volume_db = -12.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1171601667]
 zoom = Vector2(5, 5)
 
 [connection signal="area_entered" from="DestinationDetector" to="." method="_on_destination_detector_area_entered"]

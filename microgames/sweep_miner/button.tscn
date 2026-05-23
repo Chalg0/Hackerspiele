@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdvjhdja8xj71"]
+[gd_scene format=3 uid="uid://bdvjhdja8xj71"]
 
 [ext_resource type="Script" uid="uid://cb0o3u4mvskbo" path="res://microgames/sweep_miner/button.gd" id="1_4fi4m"]
 [ext_resource type="FontFile" uid="uid://sa1ml6cgmorr" path="res://assets/fonts/Share Tech Mono/ShareTechMono-Regular.ttf" id="2_r5th7"]
@@ -21,7 +21,7 @@ font = ExtResource("2_r5th7")
 font_size = 42
 font_color = Color(0, 0, 0, 1)
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" unique_id=875778745]
 offset_right = 8.0
 offset_bottom = 8.0
 size_flags_horizontal = 3
@@ -29,7 +29,7 @@ size_flags_vertical = 3
 flat = true
 script = ExtResource("1_4fi4m")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1408473073]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kipgs")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=1368401401]
 visible = false
 layout_mode = 1
 anchors_preset = 15

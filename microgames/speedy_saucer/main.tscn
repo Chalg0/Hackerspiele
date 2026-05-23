@@ -1,25 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://5ivsiqhjsimq"]
+[gd_scene format=3 uid="uid://5ivsiqhjsimq"]
 
 [ext_resource type="Texture2D" uid="uid://c8o6fkdu4acwx" path="res://microgames/speedy_saucer/assets/purple.png" id="1_bsdjs"]
 [ext_resource type="Script" uid="uid://dq282vw15fdwl" path="res://microgames/speedy_saucer/main.gd" id="1_xd0ow"]
 [ext_resource type="PackedScene" uid="uid://etssw6q4syex" path="res://microgames/speedy_saucer/entities/player.tscn" id="2_fbgke"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1464744176]
 script = ExtResource("1_xd0ow")
 time = 20.0
 
-[node name="Level" type="Node2D" parent="."]
+[node name="Level" type="Node2D" parent="." unique_id=220963650]
 
-[node name="Player" parent="." instance=ExtResource("2_fbgke")]
+[node name="Player" parent="." unique_id=676858131 instance=ExtResource("2_fbgke")]
 
-[node name="Graphics" type="Control" parent="."]
+[node name="Graphics" type="Control" parent="." unique_id=992260714]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics" unique_id=450055331]
 layer = -1
 
-[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer" unique_id=1477484668]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

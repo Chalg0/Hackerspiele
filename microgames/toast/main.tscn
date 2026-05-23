@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bl2l6ub7boqo1"]
+[gd_scene format=3 uid="uid://bl2l6ub7boqo1"]
 
 [ext_resource type="Script" uid="uid://bbi47iv854v4i" path="res://microgames/toast/main.gd" id="1_0eaa5"]
 [ext_resource type="Texture2D" uid="uid://fwv60bcp5xxc" path="res://microgames/toast/toast.png" id="2_hn71x"]
@@ -239,16 +239,16 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_on76y"]
 font_color = Color(0, 0, 0, 0.282353)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=433261044]
 script = ExtResource("1_0eaa5")
 time = 12.0
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=2103366927]
 position = Vector2(580, 267)
 scale = Vector2(0.452879, 0.398136)
 texture = ExtResource("2_k0wgn")
 
-[node name="ControlsLabel" type="Label" parent="."]
+[node name="ControlsLabel" type="Label" parent="." unique_id=1673050827]
 offset_left = 343.0
 offset_top = 535.0
 offset_right = 676.0
@@ -257,12 +257,12 @@ text = "Charge
 and Eject!"
 label_settings = SubResource("LabelSettings_k5ilc")
 
-[node name="SpeechBubble" type="Sprite2D" parent="."]
+[node name="SpeechBubble" type="Sprite2D" parent="." unique_id=649334100]
 position = Vector2(1047, 231)
 scale = Vector2(0.394942, 0.394942)
 texture = ExtResource("7_f60wu")
 
-[node name="SpeechBubbleLabel" type="RichTextLabel" parent="SpeechBubble"]
+[node name="SpeechBubbleLabel" type="RichTextLabel" parent="SpeechBubble" unique_id=1504956485]
 offset_left = -511.0
 offset_top = -377.0
 offset_right = 522.0
@@ -275,14 +275,14 @@ text = "I WANT TOAST!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Boundary" type="StaticBody2D" parent="."]
+[node name="Boundary" type="StaticBody2D" parent="." unique_id=1829079323]
 position = Vector2(189, 422)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary" unique_id=809345131]
 position = Vector2(391, 249)
 shape = SubResource("WorldBoundaryShape2D_f60wu")
 
-[node name="HandWithPlate" type="Sprite2D" parent="." node_paths=PackedStringArray("toast", "microgame_root")]
+[node name="HandWithPlate" type="Sprite2D" parent="." unique_id=362684424 node_paths=PackedStringArray("toast", "microgame_root")]
 position = Vector2(1129, 587)
 scale = Vector2(0.113, 0.113)
 texture = ExtResource("10_qrpjj")
@@ -291,97 +291,95 @@ plate_with_toast_texture = ExtResource("6_bps7a")
 toast = NodePath("../Toast")
 microgame_root = NodePath("..")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="HandWithPlate"]
+[node name="StaticBody2D" type="StaticBody2D" parent="HandWithPlate" unique_id=924899831]
 position = Vector2(-1238.94, 44.2478)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HandWithPlate/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HandWithPlate/StaticBody2D" unique_id=1072694667]
 polygon = PackedVector2Array(-772.486, -139.477, -820.767, -80.4673, -702.748, 32.187, -85.832, 118.019, 590.093, 59.0095, 804.673, -37.5513, 745.664, -193.121, 670.561, -171.663, 697.383, -64.3738, 354.056, 37.5515, -80.4673, 42.916, -643.739, -32.1868, -718.841, -96.5605, -702.748, -177.028)
 
-[node name="PlateReachedArea" type="Area2D" parent="HandWithPlate"]
+[node name="PlateReachedArea" type="Area2D" parent="HandWithPlate" unique_id=592200709]
 position = Vector2(-1247.79, 44.248)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HandWithPlate/PlateReachedArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandWithPlate/PlateReachedArea" unique_id=1020396138]
 position = Vector2(21.4579, -118.019)
 shape = SubResource("RectangleShape2D_on76y")
 
-[node name="Toast" type="RigidBody2D" parent="."]
+[node name="Toast" type="RigidBody2D" parent="." unique_id=1551034109]
 position = Vector2(188.863, 423)
 continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("6_sjrhx")
 
-[node name="Smoke" type="GPUParticles2D" parent="Toast"]
+[node name="Smoke" type="GPUParticles2D" parent="Toast" unique_id=1040606794]
 amount = 256
 texture = SubResource("GradientTexture2D_bps7a")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_sjrhx")
 
-[node name="ToastSprite" type="Sprite2D" parent="Toast"]
+[node name="ToastSprite" type="Sprite2D" parent="Toast" unique_id=1914025351]
 material = SubResource("ShaderMaterial_aaj1h")
 position = Vector2(0, 0.000244141)
 scale = Vector2(0.102877, 0.102877)
 texture = ExtResource("2_hn71x")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toast"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toast" unique_id=345264077]
 scale = Vector2(0.102877, 0.102877)
 polygon = PackedVector2Array(-377.143, 382.857, 337.143, 382.857, 468.571, -222.857, 194.286, -371.428, -262.857, -365.714, -474.286, -222.857)
 
-[node name="Toaster" type="AnimatableBody2D" parent="." node_paths=PackedStringArray("toast", "camera")]
+[node name="Toaster" type="AnimatableBody2D" parent="." unique_id=2021177016 node_paths=PackedStringArray("toast", "camera")]
 position = Vector2(188.862, 586.286)
 scale = Vector2(0.175, 0.175)
 script = ExtResource("4_gmsgr")
 toast = NodePath("../Toast")
 camera = NodePath("../Camera2D")
 
-[node name="ToastAnchor" type="Marker2D" parent="Toaster"]
+[node name="ToastAnchor" type="Marker2D" parent="Toaster" unique_id=795487407]
 position = Vector2(-39.2141, -115.919)
 scale = Vector2(0.794709, 0.794709)
 
-[node name="ToasterSprite" type="Sprite2D" parent="Toaster"]
+[node name="ToasterSprite" type="Sprite2D" parent="Toaster" unique_id=1766963519]
 scale = Vector2(0.794709, 0.794709)
 texture = ExtResource("3_gmsgr")
 
-[node name="SpringHandleAnchor" type="Node2D" parent="Toaster"]
+[node name="SpringHandleAnchor" type="Node2D" parent="Toaster" unique_id=1072497409]
 position = Vector2(497.931, -167.349)
 scale = Vector2(0.794709, 0.794709)
 
-[node name="SpringHandle" type="Sprite2D" parent="Toaster/SpringHandleAnchor"]
+[node name="SpringHandle" type="Sprite2D" parent="Toaster/SpringHandleAnchor" unique_id=281768528]
 texture = ExtResource("5_fa81w")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toaster"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toaster" unique_id=253475583]
 scale = Vector2(0.704007, 0.551179)
 polygon = PackedVector2Array(-690.64, -481.634, -673.497, 506.937, 646.503, 495.509, 675.074, -481.634, 543.646, -481.634, 526.503, 375.509, -547.783, 381.223, -593.497, -487.349)
 
-[node name="ToastInsideCheckArea" type="Area2D" parent="Toaster"]
+[node name="ToastInsideCheckArea" type="Area2D" parent="Toaster" unique_id=394340826]
 scale = Vector2(0.613062, -0.476826)
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Toaster/ToastInsideCheckArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toaster/ToastInsideCheckArea" unique_id=367131678]
 position = Vector2(-33.4969, -30.2058)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_k0wgn")
 
-[node name="WarnLight1" type="PointLight2D" parent="Toaster"]
+[node name="WarnLight1" type="PointLight2D" parent="Toaster" unique_id=1403350063]
 position = Vector2(155.074, 175.508)
 enabled = false
 color = Color(0.89, 0.0979, 0.0979, 1)
 energy = 3.52
 texture = SubResource("GradientTexture2D_0eaa5")
 
-[node name="WarnLight2" type="PointLight2D" parent="Toaster"]
+[node name="WarnLight2" type="PointLight2D" parent="Toaster" unique_id=819109204]
 position = Vector2(155.074, 175.508)
 enabled = false
 energy = 3.52
 texture = SubResource("GradientTexture2D_i4dx3")
 texture_scale = 2.2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Toaster"]
-libraries = {
-&"": SubResource("AnimationLibrary_0eaa5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Toaster" unique_id=2045450519]
+libraries/ = SubResource("AnimationLibrary_0eaa5")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1196459056]
 scale = Vector2(14.7011, 0.876156)
 anchor_mode = 0
 zoom = Vector2(2, 2)
@@ -389,14 +387,12 @@ script = ExtResource("15_0eaa5")
 decay_rate = 4.0
 max_offset = Vector2(100, 100)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_6eujq")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1918348725]
+libraries/ = SubResource("AnimationLibrary_6eujq")
 
-[node name="[INTERFACE]Obstacles" type="Node2D" parent="."]
+[node name="[INTERFACE]Obstacles" type="Node2D" parent="." unique_id=1888838913]
 
-[node name="CreditLabel" type="Label" parent="."]
+[node name="CreditLabel" type="Label" parent="." unique_id=579717961]
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 316.0

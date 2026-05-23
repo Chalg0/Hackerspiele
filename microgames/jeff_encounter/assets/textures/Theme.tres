@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bwttwsp1fetbo"]
+[gd_resource type="Theme" format=3 uid="uid://bwttwsp1fetbo"]
 
 [ext_resource type="Texture2D" uid="uid://ch4l54w3xbjiy" path="res://microgames/jeff_encounter/assets/textures/button-box-style.png" id="1_d738b"]
 [ext_resource type="StyleBox" uid="uid://dp0273hhuc3e8" path="res://microgames/jeff_encounter/assets/textures/PanelBoxTexture.tres" id="2_15pcj"]

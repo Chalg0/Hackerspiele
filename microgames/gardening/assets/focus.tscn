@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://5p3nccfu5myx"]
+[gd_scene format=3 uid="uid://5p3nccfu5myx"]
 
 [ext_resource type="PackedScene" uid="uid://bpunnhe0jggcr" path="res://microgames/gardening/assets/focus.gltf" id="1_0bfu2"]
 [ext_resource type="Script" uid="uid://c4ybymjumpfn8" path="res://microgames/gardening/assets/focus.gd" id="2_jgdcq"]
@@ -9,8 +9,8 @@ emission_enabled = true
 emission = Color(0.644985, 0.408666, 0.0637943, 1)
 disable_receive_shadows = true
 
-[node name="focus" instance=ExtResource("1_0bfu2")]
+[node name="focus" unique_id=90175886 instance=ExtResource("1_0bfu2")]
 script = ExtResource("2_jgdcq")
 
-[node name="Circle" parent="." index="0"]
+[node name="Circle" parent="." index="0" unique_id=750257021]
 surface_material_override/0 = SubResource("StandardMaterial3D_jgdcq")

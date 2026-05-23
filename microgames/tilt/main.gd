@@ -27,8 +27,7 @@ func ball_finished():
 	spawn_ball()
 
 func spawn_ball():
-	var ball_obj = ball.instantiate()
-	add_child(ball_obj)
+	add_child.call_deferred(ball.instantiate())
 
 func end():
 	finished.emit(Result.Loss)

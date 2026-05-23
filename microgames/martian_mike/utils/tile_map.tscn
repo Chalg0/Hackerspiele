@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdnifk3w1karw"]
+[gd_scene format=3 uid="uid://bdnifk3w1karw"]
 
 [ext_resource type="Texture2D" uid="uid://bo23s635ak8e7" path="res://microgames/martian_mike/assets/textures/Terrain (16x16).png" id="1_huevt"]
 
@@ -593,5 +593,5 @@ terrain_set_1/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_42wdn")
 pattern_0 = SubResource("TileMapPattern_0rxoi")
 
-[node name="TileMap" type="TileMapLayer"]
+[node name="TileMap" type="TileMapLayer" unique_id=653527074]
 tile_set = SubResource("TileSet_4fnm1")

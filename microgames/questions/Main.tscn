@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmag4xacra1k5"]
+[gd_scene format=3 uid="uid://bmag4xacra1k5"]
 
 [ext_resource type="PackedScene" uid="uid://db1i7vju5bg68" path="res://microgames/questions/entities/door.tscn" id="1_2q8u5"]
 [ext_resource type="Script" uid="uid://wtpbv3mnurfy" path="res://microgames/questions/main.gd" id="1_5qak1"]
@@ -10,30 +10,30 @@ colors = PackedColorArray(0.65098, 0, 0.105882, 1, 0.854902, 0.933333, 0.0901961
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bid1q"]
 gradient = SubResource("Gradient_2q8u5")
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=933568156]
 script = ExtResource("1_5qak1")
 time = 10.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1937829584]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(38.5937, 19.8418)
 texture = SubResource("GradientTexture1D_bid1q")
 
-[node name="Doors" type="Node2D" parent="."]
+[node name="Doors" type="Node2D" parent="." unique_id=929771234]
 
-[node name="Door1" parent="Doors" instance=ExtResource("1_2q8u5")]
+[node name="Door1" parent="Doors" unique_id=1663994419 instance=ExtResource("1_2q8u5")]
 position = Vector2(200, 350)
 
-[node name="Door2" parent="Doors" instance=ExtResource("1_2q8u5")]
+[node name="Door2" parent="Doors" unique_id=1809568278 instance=ExtResource("1_2q8u5")]
 position = Vector2(600, 350)
 id = 1
 
-[node name="Door3" parent="Doors" instance=ExtResource("1_2q8u5")]
+[node name="Door3" parent="Doors" unique_id=1424203722 instance=ExtResource("1_2q8u5")]
 position = Vector2(1000, 350)
 id = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=699467666]
 modulate = Color(0, 0, 0, 1)
 offset_left = 100.0
 offset_top = 51.0
@@ -43,7 +43,7 @@ scale = Vector2(3, 3)
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=666232952]
 one_shot = true
 
 [connection signal="clicked" from="Doors/Door1" to="." method="_on_door_1_clicked"]

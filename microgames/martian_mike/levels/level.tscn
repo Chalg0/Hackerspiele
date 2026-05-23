@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c06kt8inrnred"]
+[gd_scene format=3 uid="uid://c06kt8inrnred"]
 
 [ext_resource type="Script" uid="uid://dfv05c8a6nwfh" path="res://microgames/martian_mike/levels/level.gd" id="1_6m53m"]
 [ext_resource type="PackedScene" uid="uid://bjx7q841lj1uc" path="res://microgames/martian_mike/utils/bg.tscn" id="2_av4an"]
@@ -7,21 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://dhseu11a1r756" path="res://microgames/martian_mike/utils/exit.tscn" id="4_hbl1i"]
 [ext_resource type="PackedScene" uid="uid://bdnifk3w1karw" path="res://microgames/martian_mike/utils/tile_map.tscn" id="5_0c4a8"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1655840789]
 script = ExtResource("1_6m53m")
 
-[node name="BG" parent="." instance=ExtResource("2_av4an")]
+[node name="BG" parent="." unique_id=316263943 instance=ExtResource("2_av4an")]
 
-[node name="Deathzone" parent="." instance=ExtResource("4_4u85n")]
+[node name="Deathzone" parent="." unique_id=1797220100 instance=ExtResource("4_4u85n")]
 
-[node name="Start" parent="." instance=ExtResource("3_rv7q0")]
+[node name="Start" parent="." unique_id=2092786592 instance=ExtResource("3_rv7q0")]
 position = Vector2(61, 223)
 
-[node name="Exit" parent="." instance=ExtResource("4_hbl1i")]
+[node name="Exit" parent="." unique_id=510874489 instance=ExtResource("4_hbl1i")]
 position = Vector2(1511, 223)
 
-[node name="Traps" type="Node2D" parent="."]
+[node name="Traps" type="Node2D" parent="." unique_id=1771256012]
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=2123996431]
 
-[node name="TileMapLayer" parent="." instance=ExtResource("5_0c4a8")]
+[node name="TileMapLayer" parent="." unique_id=324495881 instance=ExtResource("5_0c4a8")]

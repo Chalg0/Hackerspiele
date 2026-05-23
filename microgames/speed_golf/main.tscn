@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cawhev31a536w"]
+[gd_scene format=4 uid="uid://cawhev31a536w"]
 
 [ext_resource type="Script" uid="uid://ddf8buddw7l0f" path="res://microgames/speed_golf/main.gd" id="1_7fdh2"]
 [ext_resource type="Texture2D" uid="uid://00brjrkkoyvc" path="res://microgames/speed_golf/Assets/Erde.png" id="2_6cxmg"]
@@ -35,37 +35,37 @@ sources/2 = SubResource("TileSetAtlasSource_j0dru")
 sources/3 = SubResource("TileSetAtlasSource_gpwd5")
 sources/4 = SubResource("TileSetAtlasSource_0cdvu")
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1013038285]
 texture_filter = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_7fdh2")
 time = 10.0
 
-[node name="Ball" type="RigidBody2D" parent="."]
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1881300865]
 z_index = 11
 position = Vector2(48, 79)
 gravity_scale = 0.0
 script = ExtResource("3_icc6o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=692110805]
 shape = SubResource("CircleShape2D_7fdh2")
 
-[node name="DrehObjekt" type="Node2D" parent="Ball"]
+[node name="DrehObjekt" type="Node2D" parent="Ball" unique_id=625019881]
 
-[node name="Sprite2D" type="Sprite2D" parent="Ball/DrehObjekt"]
+[node name="Sprite2D" type="Sprite2D" parent="Ball/DrehObjekt" unique_id=663722581]
 texture = ExtResource("2_swbpa")
 
-[node name="SchlagAnzeige" type="Node2D" parent="Ball/DrehObjekt"]
+[node name="SchlagAnzeige" type="Node2D" parent="Ball/DrehObjekt" unique_id=1682040889]
 texture_filter = 1
 position = Vector2(-20, 0)
 rotation = 3.14159
 script = ExtResource("4_7fdh2")
 
-[node name="SchlagStrenghtOutline" type="Sprite2D" parent="Ball/DrehObjekt/SchlagAnzeige"]
+[node name="SchlagStrenghtOutline" type="Sprite2D" parent="Ball/DrehObjekt/SchlagAnzeige" unique_id=603001083]
 z_index = 5
 texture = ExtResource("4_0cdvu")
 
-[node name="SchlagStrenghtAnzeige" type="Sprite2D" parent="Ball/DrehObjekt/SchlagAnzeige"]
+[node name="SchlagStrenghtAnzeige" type="Sprite2D" parent="Ball/DrehObjekt/SchlagAnzeige" unique_id=741352243]
 position = Vector2(-1.49, -9.75)
 scale = Vector2(1.03, 1.035)
 texture = ExtResource("5_7fdh2")
@@ -74,6 +74,6 @@ region_enabled = true
 region_rect = Rect2(0, 0.322893, 3.10151, 18.6073)
 script = ExtResource("6_gwqu2")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=916677239]
 tile_map_data = PackedByteArray("AAAAAAAAAwAAAAAAAAABAAAAAwAAAAAAAAACAAAAAwAAAAAAAAADAAAAAwAAAAAAAAAEAAAAAwAAAAAAAAAAAAEAAwAAAAAAAAABAAEAAwAAAAAAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAAAAAIAAwAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAAAAMAAwAAAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAAFAAAAAwAAAAAAAAAFAAEAAwAAAAAAAAAFAAIAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAADAAQAAwAAAAAAAAACAAQAAwAAAAAAAAABAAQAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAUAAwAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAADAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAIAAwAAAAAAAAAGAAEAAwAAAAAAAAAGAAAAAwAAAAAAAAAHAAAAAwAAAAAAAAAHAAEAAwAAAAAAAAAHAAIAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAQAAgAAAAAAAAAHAAUABAAAAAAAAAAIAAAAAwAAAAAAAAAJAAAAAwAAAAAAAAAJAAEAAwAAAAAAAAAIAAEAAwAAAAAAAAAIAAIAAwAAAAAAAAAJAAIAAwAAAAAAAAAJAAMAAwAAAAAAAAAIAAMAAwAAAAAAAAAIAAQAAwAAAAAAAAAJAAQAAwAAAAAAAAAJAAUAAwAAAAAAAAAJAAYAAwAAAAAAAAAIAAUAAwAAAAAAAAAIAAYAAwAAAAAAAAAHAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAFAAYAAwAAAAAAAAAEAAYAAwAAAAAAAAADAAYAAwAAAAAAAAACAAYAAwAAAAAAAAABAAYAAwAAAAAAAAAAAAYAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_swbpa")

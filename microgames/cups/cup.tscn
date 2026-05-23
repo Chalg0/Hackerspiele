@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0naasmjtc8nu"]
+[gd_scene format=3 uid="uid://d0naasmjtc8nu"]
 
 [ext_resource type="Script" uid="uid://u62mwlfj5jng" path="res://microgames/cups/cup.gd" id="1_71knf"]
 [ext_resource type="Shader" uid="uid://lnf4wfrouox0" path="res://microgames/cups/shaders/outline.gdshader" id="2_mfp1s"]
@@ -22,9 +22,9 @@ top_radius = 0.6
 bottom_radius = 1.0
 height = 2.5
 
-[node name="Cup" type="Node3D"]
+[node name="Cup" type="Node3D" unique_id=844407009]
 script = ExtResource("1_71knf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1044334834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 mesh = SubResource("CylinderMesh_ikl7a")

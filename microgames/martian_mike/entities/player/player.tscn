@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://yua0ym0v1k83"]
+[gd_scene format=3 uid="uid://yua0ym0v1k83"]
 
 [ext_resource type="Script" uid="uid://b88f1f1ovgjk6" path="res://microgames/martian_mike/entities/player/player.gd" id="1_uftnx"]
 [ext_resource type="Texture2D" uid="uid://bmcrdxn6i3ok1" path="res://microgames/martian_mike/assets/textures/player/Idle (32x32).png" id="2_0dwyc"]
@@ -204,24 +204,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwom8"]
 size = Vector2(13, 21)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1422354301 groups=["player"]]
 collision_layer = 2
 collision_mask = 29
 script = ExtResource("1_uftnx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1107593741]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ryhbc")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1838811564]
 position = Vector2(0.5, -10.5)
 shape = SubResource("RectangleShape2D_dwom8")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1715321211]
 offset = Vector2(0, -12)
 zoom = Vector2(2.5, 2.5)
 limit_bottom = 266
 
-[node name="AudioPlayer" parent="." instance=ExtResource("6_12ci6")]
+[node name="AudioPlayer" parent="." unique_id=1209100130 instance=ExtResource("6_12ci6")]

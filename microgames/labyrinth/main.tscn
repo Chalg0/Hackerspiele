@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://clne0fi17ai2g"]
+[gd_scene format=3 uid="uid://clne0fi17ai2g"]
 
 [ext_resource type="Script" uid="uid://dnfna7moqns8g" path="res://microgames/labyrinth/main.gd" id="1_p8kj7"]
 [ext_resource type="Texture2D" uid="uid://bgex3sie2ueqm" path="res://microgames/labyrinth/assets/colours.png" id="2_olmnv"]
@@ -46,18 +46,18 @@ sources/0 = SubResource("TileSetAtlasSource_0258c")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olmnv"]
 
-[node name="Labyrinth" type="Node2D"]
+[node name="Labyrinth" type="Node2D" unique_id=1841253587]
 script = ExtResource("1_p8kj7")
 time = 20.0
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=564130134]
 position = Vector2(0, 2)
 tile_set = SubResource("TileSet_p8kj7")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=437641424]
 layer = -1
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=2007341044]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,10 +65,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_olmnv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2103075841]
 zoom = Vector2(16, 16)
 
-[node name="MoveTimer" type="Timer" parent="."]
+[node name="MoveTimer" type="Timer" parent="." unique_id=1151452771]
 wait_time = 0.1
 autostart = true
 

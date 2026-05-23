@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbeylgyxlpr8q"]
+[gd_scene format=3 uid="uid://cbeylgyxlpr8q"]
 
 [ext_resource type="Script" uid="uid://cy22nsbebuqnu" path="res://microgames/flyswatter/fly_swatter.gd" id="1_5uwll"]
 [ext_resource type="Texture2D" uid="uid://c8j76786whpy1" path="res://microgames/flyswatter/textures/wood.webp" id="2_w6pb4"]
@@ -19,6 +19,21 @@ radius = 31.0161
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6pb4"]
 size = Vector2(164, 122)
 
+[sub_resource type="Animation" id="Animation_fuku0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Swateffect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ijl62"]
 resource_name = "swat"
 length = 0.3
@@ -33,21 +48,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_fuku0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Swateffect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2cjb1"]
@@ -68,11 +68,11 @@ normal = Vector2(0.0407824, -0.999168)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2cjb1"]
 normal = Vector2(-0.999742, -0.0227214)
 
-[node name="FlySwatterGame" type="Node2D"]
+[node name="FlySwatterGame" type="Node2D" unique_id=709031924]
 script = ExtResource("1_5uwll")
 time = 7.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1197484400]
 offset_left = -851.0
 offset_top = -701.0
 offset_right = 2183.0
@@ -81,7 +81,7 @@ texture = ExtResource("2_w6pb4")
 stretch_mode = 1
 metadata/Credit = "https://publicdomaintextures.com/elementor-112/wood-02/"
 
-[node name="SwatThatShit" type="Label" parent="."]
+[node name="SwatThatShit" type="Label" parent="." unique_id=620864265]
 offset_left = 1072.0
 offset_top = 670.0
 offset_right = 1288.0
@@ -89,7 +89,7 @@ offset_bottom = 716.0
 text = "by E-Cathy"
 label_settings = SubResource("LabelSettings_ijl62")
 
-[node name="by E-Cathy" type="Label" parent="."]
+[node name="by E-Cathy" type="Label" parent="." unique_id=43663321]
 offset_left = 246.0
 offset_top = 284.0
 offset_right = 1002.0
@@ -97,159 +97,157 @@ offset_bottom = 417.0
 text = "Swat that Shit"
 label_settings = SubResource("LabelSettings_srl28")
 
-[node name="Fly" type="Area2D" parent="."]
+[node name="Fly" type="Area2D" parent="." unique_id=155349885]
 position = Vector2(682, 340)
 
-[node name="FlySprite" type="Sprite2D" parent="Fly"]
+[node name="FlySprite" type="Sprite2D" parent="Fly" unique_id=15451457]
 position = Vector2(-4.00001, -6.00001)
 scale = Vector2(0.0933862, 0.103968)
 texture = ExtResource("3_ijl62")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fly" unique_id=79805141]
 position = Vector2(-2, -5)
 shape = SubResource("CircleShape2D_ftxx0")
 
-[node name="SwatterBody" type="RigidBody2D" parent="."]
+[node name="SwatterBody" type="RigidBody2D" parent="." unique_id=647010489]
 position = Vector2(265, 350)
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("3_srl28")
 
-[node name="Swateffect" type="Sprite2D" parent="SwatterBody"]
+[node name="Swateffect" type="Sprite2D" parent="SwatterBody" unique_id=1310832567]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(4, -14)
 scale = Vector2(0.392196, 0.359788)
 texture = ExtResource("5_srl28")
 
-[node name="FlySwatterSprite" type="Sprite2D" parent="SwatterBody"]
+[node name="FlySwatterSprite" type="Sprite2D" parent="SwatterBody" unique_id=1198047408]
 position = Vector2(-4, -13)
 scale = Vector2(0.240726, 0.238965)
 texture = ExtResource("5_w6pb4")
 offset = Vector2(12, 558)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SwatterBody"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwatterBody" unique_id=745657289]
 position = Vector2(2, -7)
 shape = SubResource("RectangleShape2D_w6pb4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SwatterBody"]
-libraries = {
-&"": SubResource("AnimationLibrary_2cjb1")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SwatterBody" unique_id=1690521846]
+libraries/ = SubResource("AnimationLibrary_2cjb1")
 
-[node name="Flypoints" type="Node2D" parent="."]
+[node name="Flypoints" type="Node2D" parent="." unique_id=945337672]
 
-[node name="Marker2D" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D" type="Marker2D" parent="Flypoints" unique_id=1002972260]
 position = Vector2(111, 94)
 
-[node name="Marker2D2" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D2" type="Marker2D" parent="Flypoints" unique_id=1123398461]
 position = Vector2(308, 168)
 
-[node name="Marker2D3" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D3" type="Marker2D" parent="Flypoints" unique_id=117386461]
 position = Vector2(414, 65)
 
-[node name="Marker2D4" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D4" type="Marker2D" parent="Flypoints" unique_id=1305517387]
 position = Vector2(534, 248)
 
-[node name="Marker2D5" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D5" type="Marker2D" parent="Flypoints" unique_id=1569185658]
 position = Vector2(654, 128)
 
-[node name="Marker2D6" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D6" type="Marker2D" parent="Flypoints" unique_id=520497118]
 position = Vector2(837, 68)
 
-[node name="Marker2D7" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D7" type="Marker2D" parent="Flypoints" unique_id=1548650835]
 position = Vector2(1002, 68)
 
-[node name="Marker2D8" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D8" type="Marker2D" parent="Flypoints" unique_id=1234935907]
 position = Vector2(1145, 79)
 
-[node name="Marker2D9" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D9" type="Marker2D" parent="Flypoints" unique_id=780159520]
 position = Vector2(811, 207)
 
-[node name="Marker2D10" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D10" type="Marker2D" parent="Flypoints" unique_id=770808091]
 position = Vector2(954, 213)
 
-[node name="Marker2D11" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D11" type="Marker2D" parent="Flypoints" unique_id=1946014859]
 position = Vector2(1214, 216)
 
-[node name="Marker2D12" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D12" type="Marker2D" parent="Flypoints" unique_id=1504335081]
 position = Vector2(1077, 316)
 
-[node name="Marker2D13" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D13" type="Marker2D" parent="Flypoints" unique_id=2020949002]
 position = Vector2(1200, 410)
 
-[node name="Marker2D14" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D14" type="Marker2D" parent="Flypoints" unique_id=714536067]
 position = Vector2(1035, 498)
 
-[node name="Marker2D15" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D15" type="Marker2D" parent="Flypoints" unique_id=1494873227]
 position = Vector2(718, 355)
 
-[node name="Marker2D16" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D16" type="Marker2D" parent="Flypoints" unique_id=1252734064]
 position = Vector2(889, 395)
 
-[node name="Marker2D17" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D17" type="Marker2D" parent="Flypoints" unique_id=1564741724]
 position = Vector2(1189, 575)
 
-[node name="Marker2D18" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D18" type="Marker2D" parent="Flypoints" unique_id=122875973]
 position = Vector2(1024, 638)
 
-[node name="Marker2D19" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D19" type="Marker2D" parent="Flypoints" unique_id=55099325]
 position = Vector2(770, 635)
 
-[node name="Marker2D20" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D20" type="Marker2D" parent="Flypoints" unique_id=1541551753]
 position = Vector2(858, 541)
 
-[node name="Marker2D21" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D21" type="Marker2D" parent="Flypoints" unique_id=585861584]
 position = Vector2(564, 641)
 
-[node name="Marker2D22" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D22" type="Marker2D" parent="Flypoints" unique_id=448165132]
 position = Vector2(678, 493)
 
-[node name="Marker2D23" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D23" type="Marker2D" parent="Flypoints" unique_id=225202234]
 position = Vector2(530, 442)
 
-[node name="Marker2D24" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D24" type="Marker2D" parent="Flypoints" unique_id=220066358]
 position = Vector2(367, 342)
 
-[node name="Marker2D25" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D25" type="Marker2D" parent="Flypoints" unique_id=1346548257]
 position = Vector2(127, 302)
 
-[node name="Marker2D26" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D26" type="Marker2D" parent="Flypoints" unique_id=1357405328]
 position = Vector2(238, 450)
 
-[node name="Marker2D27" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D27" type="Marker2D" parent="Flypoints" unique_id=1269537026]
 position = Vector2(115, 553)
 
-[node name="Marker2D28" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D28" type="Marker2D" parent="Flypoints" unique_id=174803014]
 position = Vector2(292, 633)
 
-[node name="Marker2D29" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D29" type="Marker2D" parent="Flypoints" unique_id=1627681210]
 position = Vector2(406, 533)
 
-[node name="Marker2D30" type="Marker2D" parent="Flypoints"]
+[node name="Marker2D30" type="Marker2D" parent="Flypoints" unique_id=1657813275]
 position = Vector2(406, 533)
 
-[node name="WorldBoundary" type="Node2D" parent="."]
+[node name="WorldBoundary" type="Node2D" parent="." unique_id=1019175127]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="WorldBoundary"]
+[node name="StaticBody2D" type="StaticBody2D" parent="WorldBoundary" unique_id=168817552]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D" unique_id=301575630]
 shape = SubResource("WorldBoundaryShape2D_srl28")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="WorldBoundary"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="WorldBoundary" unique_id=1061859502]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D2" unique_id=1815879709]
 shape = SubResource("WorldBoundaryShape2D_ijl62")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="WorldBoundary"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="WorldBoundary" unique_id=2084252465]
 position = Vector2(281, 720)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D3" unique_id=1172490397]
 shape = SubResource("WorldBoundaryShape2D_fuku0")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="WorldBoundary"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="WorldBoundary" unique_id=616310698]
 position = Vector2(281, 720)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary/StaticBody2D4" unique_id=176590540]
 position = Vector2(999, -466)
 shape = SubResource("WorldBoundaryShape2D_2cjb1")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://eqpfwmcj3yl4"]
+[gd_scene format=3 uid="uid://eqpfwmcj3yl4"]
 
 [ext_resource type="Script" uid="uid://d3pfi1jhmaw0l" path="res://microgames/pic_slide/main.gd" id="1_0sg5y"]
 [ext_resource type="StyleBox" uid="uid://vr7jdrso683o" path="res://microgames/pic_slide/assets/panel_style.tres" id="2_0pow5"]
@@ -15,17 +15,17 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1097739008]
 script = ExtResource("1_0sg5y")
 time = 60.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=721746874]
 
-[node name="Background" type="Control" parent="."]
+[node name="Background" type="Control" parent="." unique_id=1432008275]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Frame" type="Panel" parent="Background"]
+[node name="Frame" type="Panel" parent="Background" unique_id=1391592187]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,112 +40,112 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sg5y")
 
-[node name="00" type="Panel" parent="Background/Frame"]
+[node name="00" type="Panel" parent="Background/Frame" unique_id=36727810]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 180.0
 offset_bottom = 180.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/00"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/00" unique_id=1953077703]
 position = Vector2(80, 80)
 
-[node name="01" type="Panel" parent="Background/Frame"]
+[node name="01" type="Panel" parent="Background/Frame" unique_id=83196201]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 184.0
 offset_top = 20.0
 offset_right = 344.0
 offset_bottom = 180.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/01"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/01" unique_id=1390652548]
 position = Vector2(80, 80)
 
-[node name="02" type="Panel" parent="Background/Frame"]
+[node name="02" type="Panel" parent="Background/Frame" unique_id=1701962187]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 348.0
 offset_top = 20.0
 offset_right = 508.0
 offset_bottom = 180.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/02"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/02" unique_id=773334388]
 position = Vector2(80, 80)
 
-[node name="10" type="Panel" parent="Background/Frame"]
+[node name="10" type="Panel" parent="Background/Frame" unique_id=93808853]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 20.0
 offset_top = 184.0
 offset_right = 180.0
 offset_bottom = 344.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/10"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/10" unique_id=1874830398]
 position = Vector2(80, 80)
 
-[node name="11" type="Panel" parent="Background/Frame"]
+[node name="11" type="Panel" parent="Background/Frame" unique_id=1800589505]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 184.0
 offset_top = 184.0
 offset_right = 344.0
 offset_bottom = 344.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/11"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/11" unique_id=1367074801]
 position = Vector2(80, 80)
 
-[node name="12" type="Panel" parent="Background/Frame"]
+[node name="12" type="Panel" parent="Background/Frame" unique_id=127916959]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 348.0
 offset_top = 184.0
 offset_right = 508.0
 offset_bottom = 344.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/12"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/12" unique_id=1368391599]
 position = Vector2(80, 80)
 
-[node name="20" type="Panel" parent="Background/Frame"]
+[node name="20" type="Panel" parent="Background/Frame" unique_id=1577633231]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 20.0
 offset_top = 348.0
 offset_right = 180.0
 offset_bottom = 508.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/20"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/20" unique_id=1944166955]
 position = Vector2(80, 80)
 
-[node name="21" type="Panel" parent="Background/Frame"]
+[node name="21" type="Panel" parent="Background/Frame" unique_id=767768085]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 184.0
 offset_top = 348.0
 offset_right = 344.0
 offset_bottom = 508.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/21"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/21" unique_id=676841829]
 position = Vector2(80, 80)
 
-[node name="22" type="Panel" parent="Background/Frame"]
+[node name="22" type="Panel" parent="Background/Frame" unique_id=29755391]
 custom_minimum_size = Vector2(160, 160)
-layout_mode = 2
+layout_mode = 0
 offset_left = 348.0
 offset_top = 348.0
 offset_right = 508.0
 offset_bottom = 508.0
 theme_override_styles/panel = ExtResource("2_0pow5")
 
-[node name="Marker" type="Marker2D" parent="Background/Frame/22"]
+[node name="Marker" type="Marker2D" parent="Background/Frame/22" unique_id=990783183]
 position = Vector2(80, 80)
 
-[node name="Tiles" type="Node2D" parent="."]
+[node name="Tiles" type="Node2D" parent="." unique_id=442926602]

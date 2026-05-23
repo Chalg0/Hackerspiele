@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcomrn6a6k114"]
+[gd_scene format=3 uid="uid://dcomrn6a6k114"]
 
 [ext_resource type="Script" uid="uid://ddckwflm6domi" path="res://microgames/kaputtmachen/main.gd" id="1_cymel"]
 [ext_resource type="Texture2D" uid="uid://5vp3sjfhmb64" path="res://microgames/kaputtmachen/assets/canon.png" id="2_i1shy"]
@@ -15,47 +15,47 @@ height = 2
 fill = 2
 fill_to = Vector2(1, 1)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1608815097]
 script = ExtResource("1_cymel")
 time = 15.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1426027043]
 layer = -2
 
-[node name="Background" type="Panel" parent="CanvasLayer"]
+[node name="Background" type="Panel" parent="CanvasLayer" unique_id=413230367]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1064601924]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=165198874]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1219299261]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_axlsi")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Control2" type="Control" parent="CanvasLayer/HBoxContainer"]
+[node name="Control2" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=438338982]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Canon" type="Sprite2D" parent="."]
+[node name="Canon" type="Sprite2D" parent="." unique_id=1506911385]
 texture_filter = 1
 position = Vector2(120, 307)
 texture = ExtResource("2_i1shy")
 
-[node name="Ball" type="Sprite2D" parent="."]
+[node name="Ball" type="Sprite2D" parent="." unique_id=261985048]
 visible = false
 texture = SubResource("GradientTexture2D_2m5rh")

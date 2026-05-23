@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ormbkfev5dv7"]
+[gd_scene format=3 uid="uid://ormbkfev5dv7"]
 
 [ext_resource type="Script" uid="uid://dgtso7j08hlyw" path="res://microgames/ballon_popper/entities/projectile.gd" id="1_wrcud"]
 [ext_resource type="Material" uid="uid://tfngdjpcc3rj" path="res://microgames/ballon_popper/assets/projectile.tres" id="2_ofgwt"]
@@ -6,22 +6,22 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_8bbyb"]
 radius = 0.1
 
-[node name="Projectile" type="RigidBody3D"]
+[node name="Projectile" type="RigidBody3D" unique_id=722718317]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
 script = ExtResource("1_wrcud")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=138132997]
 radius = 0.1
 radial_segments = 20
 rings = 20
 material = ExtResource("2_ofgwt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=239281611]
 shape = SubResource("SphereShape3D_8bbyb")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=247791932]
 wait_time = 5.0
 one_shot = true
 autostart = true

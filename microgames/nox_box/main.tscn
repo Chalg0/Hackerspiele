@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbfm5e6xa53ke"]
+[gd_scene format=3 uid="uid://dbfm5e6xa53ke"]
 
 [ext_resource type="PackedScene" uid="uid://dtmwrdlcx1248" path="res://microgames/nox_box/entities/player.tscn" id="1_co780"]
 [ext_resource type="Script" uid="uid://b1ytxm88r3hth" path="res://microgames/nox_box/main.gd" id="1_px0i0"]
@@ -7,15 +7,16 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px0i0"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1618030919]
 script = ExtResource("1_px0i0")
 time = 20.0
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=643723699]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Label" type="Label" parent="UI"]
+[node name="Label" type="Label" parent="UI" unique_id=1138141270]
+layout_mode = 0
 offset_left = -87.0
 offset_top = 33.0
 offset_right = 88.0
@@ -25,58 +26,58 @@ label_settings = SubResource("LabelSettings_px0i0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player" parent="." instance=ExtResource("1_co780")]
+[node name="Player" parent="." unique_id=1158555357 instance=ExtResource("1_co780")]
 position = Vector2(-1, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=140207766]
 position = Vector2(-1, 0)
 zoom = Vector2(3, 3)
 
-[node name="Boxes" type="Node2D" parent="."]
+[node name="Boxes" type="Node2D" parent="." unique_id=949475551]
 
-[node name="PlayerBorder" type="StaticBody2D" parent="."]
+[node name="PlayerBorder" type="StaticBody2D" parent="." unique_id=53709114]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBorder" unique_id=574903113]
 position = Vector2(0, -130)
 scale = Vector2(27.12, 1)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerBorder"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerBorder" unique_id=1681224137]
 position = Vector2(0, 130)
 scale = Vector2(27.12, 1)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerBorder"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerBorder" unique_id=846294687]
 position = Vector2(-224, 0)
 scale = Vector2(1, 20)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayerBorder"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayerBorder" unique_id=54356354]
 position = Vector2(222, 0)
 scale = Vector2(1, 20)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="BoxDeathzone" type="Area2D" parent="."]
+[node name="BoxDeathzone" type="Area2D" parent="." unique_id=1370541301]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxDeathzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxDeathzone" unique_id=888322012]
 position = Vector2(0, -150)
 scale = Vector2(27.12, 1)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="BoxDeathzone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BoxDeathzone" unique_id=56846084]
 position = Vector2(0, 150)
 scale = Vector2(27.12, 1)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="BoxDeathzone"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BoxDeathzone" unique_id=1612311466]
 position = Vector2(-244, 0)
 scale = Vector2(1, 20)
 shape = SubResource("RectangleShape2D_px0i0")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="BoxDeathzone"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BoxDeathzone" unique_id=249046913]
 position = Vector2(242, 0)
 scale = Vector2(1, 20)
 shape = SubResource("RectangleShape2D_px0i0")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b488bpf5wabif"]
+[gd_scene format=3 uid="uid://b488bpf5wabif"]
 
 [ext_resource type="Script" uid="uid://cyp7b7y6x2wuj" path="res://microgames/etch_a_sketch/main.gd" id="1_mb8x2"]
 [ext_resource type="Script" uid="uid://bt8y5ttp6p4ja" path="res://microgames/etch_a_sketch/target.gd" id="2_p7lea"]
@@ -49,14 +49,14 @@ size = Vector2(420, 315)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfmxs"]
 bg_color = Color(0.243379, 0.576129, 1, 1)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1507158613]
 script = ExtResource("1_mb8x2")
 targets = Array[ExtResource("2_p7lea")]([SubResource("Resource_nbxtv"), SubResource("Resource_5w6c3"), SubResource("Resource_bfmxs"), SubResource("Resource_c8y5c")])
 time = 9.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2146726273]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=911981993]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wtftk")
 
-[node name="PostIt" type="TextureRect" parent="CanvasLayer"]
+[node name="PostIt" type="TextureRect" parent="CanvasLayer" unique_id=672345993]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.753
@@ -81,7 +81,7 @@ grow_vertical = 2
 pivot_offset = Vector2(170, 180)
 texture = ExtResource("3_p7lea")
 
-[node name="Label" type="Label" parent="CanvasLayer/PostIt"]
+[node name="Label" type="Label" parent="CanvasLayer/PostIt" unique_id=1547035646]
 layout_mode = 1
 offset_left = 51.0
 offset_top = 40.0
@@ -91,7 +91,7 @@ rotation = -0.0174533
 text = "Draw this:"
 label_settings = SubResource("LabelSettings_mb8x2")
 
-[node name="TargetRect" type="TextureRect" parent="CanvasLayer/PostIt"]
+[node name="TargetRect" type="TextureRect" parent="CanvasLayer/PostIt" unique_id=1212234846]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = 54.0
@@ -103,7 +103,7 @@ texture = SubResource("PlaceholderTexture2D_mb8x2")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="EtchASketch" type="TextureRect" parent="CanvasLayer"]
+[node name="EtchASketch" type="TextureRect" parent="CanvasLayer" unique_id=274383289]
 unique_name_in_owner = true
 texture_filter = 1
 anchors_preset = -1
@@ -118,7 +118,7 @@ offset_bottom = 338.04
 pivot_offset = Vector2(350, 250)
 texture = ExtResource("3_mb8x2")
 
-[node name="HandRight" type="TextureRect" parent="CanvasLayer/EtchASketch"]
+[node name="HandRight" type="TextureRect" parent="CanvasLayer/EtchASketch" unique_id=1818539215]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -137,7 +137,7 @@ scale = Vector2(1.04, 1.04)
 pivot_offset = Vector2(250, 500)
 texture = ExtResource("4_p7lea")
 
-[node name="HandLeft" type="TextureRect" parent="CanvasLayer/EtchASketch"]
+[node name="HandLeft" type="TextureRect" parent="CanvasLayer/EtchASketch" unique_id=716785789]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -156,7 +156,7 @@ scale = Vector2(1.04, -1.04)
 pivot_offset = Vector2(250, 500)
 texture = ExtResource("4_p7lea")
 
-[node name="DrawingRect" type="TextureRect" parent="CanvasLayer/EtchASketch"]
+[node name="DrawingRect" type="TextureRect" parent="CanvasLayer/EtchASketch" unique_id=1691185245]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 132.798
@@ -165,7 +165,7 @@ offset_right = 552.798
 offset_bottom = 427.359
 texture = SubResource("PlaceholderTexture2D_mb8x2")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/EtchASketch"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/EtchASketch" unique_id=2002938439]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5

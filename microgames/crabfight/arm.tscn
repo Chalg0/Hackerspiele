@@ -1,8 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2rde7m01qpti"]
+[gd_scene format=3 uid="uid://d2rde7m01qpti"]
 
 [ext_resource type="Texture2D" uid="uid://c3sl0owyra7pj" path="res://microgames/crabfight/assets/arm.svg" id="1_8fr6q"]
 [ext_resource type="Script" uid="uid://cefygulh2wr4b" path="res://microgames/crabfight/arm.gd" id="1_cqem0"]
 [ext_resource type="Texture2D" uid="uid://q22ei8rqgaaa" path="res://microgames/crabfight/assets/shear.svg" id="2_cqem0"]
+
+[sub_resource type="Animation" id="Animation_cqem0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shear:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_8fr6q"]
 resource_name = "clap"
@@ -20,44 +35,27 @@ tracks/0/keys = {
 "values": [-0.113446, 0.331613, -0.113446]
 }
 
-[sub_resource type="Animation" id="Animation_cqem0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shear:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dtxar"]
 _data = {
 &"RESET": SubResource("Animation_cqem0"),
 &"clap": SubResource("Animation_8fr6q")
 }
 
-[node name="Arm" type="Node2D"]
+[node name="Arm" type="Node2D" unique_id=444532383]
 script = ExtResource("1_cqem0")
 
-[node name="Arm" type="Sprite2D" parent="."]
+[node name="Arm" type="Sprite2D" parent="." unique_id=272181978]
 texture = ExtResource("1_8fr6q")
 
-[node name="Shear" type="Sprite2D" parent="."]
+[node name="Shear" type="Sprite2D" parent="." unique_id=159421305]
 position = Vector2(48, -20)
 texture = ExtResource("2_cqem0")
 offset = Vector2(-12.5, -40)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_dtxar")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1089994337]
+libraries/ = SubResource("AnimationLibrary_dtxar")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1478309636]
 wait_time = 0.4
 one_shot = true
 autostart = true

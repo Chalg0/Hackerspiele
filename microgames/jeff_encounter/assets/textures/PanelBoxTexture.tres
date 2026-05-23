@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dp0273hhuc3e8"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dp0273hhuc3e8"]
 
 [ext_resource type="Texture2D" uid="uid://do15jbr236n0f" path="res://microgames/jeff_encounter/assets/textures/box-style.png" id="1_2oe7q"]
 

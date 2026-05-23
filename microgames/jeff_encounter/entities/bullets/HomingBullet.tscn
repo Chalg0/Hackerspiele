@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://i0ulxtay483o"]
+[gd_scene format=3 uid="uid://i0ulxtay483o"]
 
 [ext_resource type="PackedScene" uid="uid://b0pfot8ar77fj" path="res://microgames/jeff_encounter/entities/bullets/Bullet.tscn" id="1_bery2"]
 [ext_resource type="Script" uid="uid://b7uk75sh7fald" path="res://microgames/jeff_encounter/entities/bullets/HomingBullet.gd" id="2_cnx2s"]
@@ -46,23 +46,21 @@ _data = {
 &"rocket_fly": SubResource("Animation_5ps6t")
 }
 
-[node name="HomingBullet" instance=ExtResource("1_bery2")]
+[node name="HomingBullet" unique_id=1407448693 instance=ExtResource("1_bery2")]
 script = ExtResource("2_cnx2s")
 speed = 50.0
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0" unique_id=1557057125]
 texture = ExtResource("3_32y20")
 hframes = 3
 
-[node name="CollisionShape2D" parent="PlayerHit" index="0"]
+[node name="CollisionShape2D" parent="PlayerHit" parent_id_path=PackedInt32Array(594381567) index="0" unique_id=1202749353]
 position = Vector2(0, -1.375)
 shape = SubResource("RectangleShape2D_xfbwh")
 
-[node name="CollisionShape2D" parent="BuildingCollision" index="0"]
+[node name="CollisionShape2D" parent="BuildingCollision" parent_id_path=PackedInt32Array(531075208) index="0" unique_id=676249548]
 position = Vector2(0, -1.375)
 shape = SubResource("RectangleShape2D_xfbwh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-libraries = {
-"": SubResource("AnimationLibrary_m8rem")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=1316295723]
+libraries/ = SubResource("AnimationLibrary_m8rem")

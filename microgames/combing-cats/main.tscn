@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bclr7x4bssxvd"]
+[gd_scene format=3 uid="uid://bclr7x4bssxvd"]
 
 [ext_resource type="Script" uid="uid://cpodya6ulveki" path="res://microgames/combing-cats/main.gd" id="1_mfgbp"]
 [ext_resource type="Texture2D" uid="uid://bw4cekcl0b6cp" path="res://microgames/combing-cats/background.png" id="2_ldx1w"]
@@ -23,66 +23,66 @@ rough = true
 radius = 24.0
 height = 82.0
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=658363561]
 script = ExtResource("1_mfgbp")
 time = 10.0
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1959170403]
 position = Vector2(643, 359)
 texture = ExtResource("2_ldx1w")
 
-[node name="Cat-combed" type="Sprite2D" parent="."]
+[node name="Cat-combed" type="Sprite2D" parent="." unique_id=1765570182]
 position = Vector2(699, 369)
 texture = ExtResource("3_5j027")
 
-[node name="hed" type="Area2D" parent="Cat-combed"]
+[node name="hed" type="Area2D" parent="Cat-combed" unique_id=497156039]
 
-[node name="killzone" type="CollisionPolygon2D" parent="Cat-combed/hed"]
+[node name="killzone" type="CollisionPolygon2D" parent="Cat-combed/hed" unique_id=555040798]
 polygon = PackedVector2Array(93, -199, 114, -148, 98, -92, 125, -51, 182, -24, 262, -21, 309, -55, 306, -127, 327, -181, 283, -176, 129, -187, 118, -195)
 
-[node name="Area2D" type="Area2D" parent="Cat-combed"]
+[node name="Area2D" type="Area2D" parent="Cat-combed" unique_id=121705941]
 collision_layer = 5
 collision_mask = 5
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cat-combed/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cat-combed/Area2D" unique_id=600376119]
 position = Vector2(0, 3)
 polygon = PackedVector2Array(-231, -122, -291, -81, -341, -29, -357, 39, -347, 143, -301, 234, -282, 261, -233, 245, -212, 208, -191, 216, -2, 156, 47, 147, 147, 146, 189, 91, 248, 37, 258, -19, 182, -17, 126, -38, 91, -85, 88, -151, 13, -168, -79, -168, -82, -168, -173, -144, -211, -130, -211, -130)
 
-[node name="eyebrows" type="Node2D" parent="Cat-combed"]
+[node name="eyebrows" type="Node2D" parent="Cat-combed" unique_id=1868596069]
 position = Vector2(168, -136)
 rotation = 0.463207
 scale = Vector2(0.197275, 0.256098)
 script = ExtResource("9_va317")
 
-[node name="Eyebrow2" type="Sprite2D" parent="Cat-combed/eyebrows"]
+[node name="Eyebrow2" type="Sprite2D" parent="Cat-combed/eyebrows" unique_id=674557129]
 position = Vector2(426.266, -137.81)
 rotation = -0.662815
 scale = Vector2(0.89106, 1.16068)
 skew = -0.258023
 texture = ExtResource("10_glppb")
 
-[node name="Eyebrow" type="Sprite2D" parent="Cat-combed/eyebrows"]
+[node name="Eyebrow" type="Sprite2D" parent="Cat-combed/eyebrows" unique_id=758444554]
 texture = ExtResource("10_glppb")
 
-[node name="Comb" type="CharacterBody2D" parent="."]
+[node name="Comb" type="CharacterBody2D" parent="." unique_id=440690622]
 position = Vector2(320, 255)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("4_t375k")
 claw_pos = Vector2(800, 600)
 
-[node name="HairComb" type="Sprite2D" parent="Comb"]
+[node name="HairComb" type="Sprite2D" parent="Comb" unique_id=61565942]
 rotation = -0.375246
 texture = ExtResource("5_omrus")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Comb"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Comb" unique_id=1158452894]
 position = Vector2(11.3262, -22.4541)
 rotation = -0.375246
 shape = SubResource("RectangleShape2D_ldx1w")
 
-[node name="knots" type="Node2D" parent="."]
+[node name="knots" type="Node2D" parent="." unique_id=1215594294]
 position = Vector2(643, 359)
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="knots"]
+[node name="RigidBody2D2" type="RigidBody2D" parent="knots" unique_id=253938624]
 position = Vector2(-204, 78)
 collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_5j027")
@@ -90,13 +90,13 @@ gravity_scale = 0.0
 linear_damp = 12.242
 angular_damp = 30.606
 
-[node name="Knot1" type="Sprite2D" parent="knots/RigidBody2D2"]
+[node name="Knot1" type="Sprite2D" parent="knots/RigidBody2D2" unique_id=242458524]
 texture = ExtResource("7_omrus")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="knots/RigidBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knots/RigidBody2D2" unique_id=521600075]
 shape = SubResource("CapsuleShape2D_t375k")
 
-[node name="RigidBody2D3" type="RigidBody2D" parent="knots"]
+[node name="RigidBody2D3" type="RigidBody2D" parent="knots" unique_id=1609201496]
 position = Vector2(49, 149)
 collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_5j027")
@@ -104,13 +104,13 @@ gravity_scale = 0.0
 linear_damp = 12.242
 angular_damp = 30.606
 
-[node name="Knot1" type="Sprite2D" parent="knots/RigidBody2D3"]
+[node name="Knot1" type="Sprite2D" parent="knots/RigidBody2D3" unique_id=581986144]
 texture = ExtResource("8_3cerx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="knots/RigidBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knots/RigidBody2D3" unique_id=401674105]
 shape = SubResource("CapsuleShape2D_t375k")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="knots"]
+[node name="RigidBody2D" type="RigidBody2D" parent="knots" unique_id=611966299]
 position = Vector2(-32, -73)
 collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_5j027")
@@ -118,13 +118,13 @@ gravity_scale = 0.0
 linear_damp = 12.242
 angular_damp = 30.606
 
-[node name="Knot1" type="Sprite2D" parent="knots/RigidBody2D"]
+[node name="Knot1" type="Sprite2D" parent="knots/RigidBody2D" unique_id=1394972361]
 texture = ExtResource("6_5j027")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="knots/RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knots/RigidBody2D" unique_id=967601900]
 shape = SubResource("CapsuleShape2D_t375k")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1629963640]
 offset_left = 59.0
 offset_top = 28.0
 offset_right = 507.0
@@ -135,24 +135,24 @@ text = "Comb the cat !!!!"
 fit_content = true
 scroll_active = false
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=412278787]
 position = Vector2(809, 599)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("11_n2sqa")
 
-[node name="Scratch" type="Sprite2D" parent="Node2D"]
+[node name="Scratch" type="Sprite2D" parent="Node2D" unique_id=736967552]
 position = Vector2(-1880, -2590)
 rotation = -0.460043
 scale = Vector2(10, 10)
 texture = ExtResource("12_xswhf")
 
-[node name="Scratch2" type="Sprite2D" parent="Node2D"]
+[node name="Scratch2" type="Sprite2D" parent="Node2D" unique_id=1197743859]
 position = Vector2(-3190, -2250)
 rotation = -0.460043
 scale = Vector2(10, 10)
 texture = ExtResource("12_xswhf")
 
-[node name="Scratch3" type="Sprite2D" parent="Node2D"]
+[node name="Scratch3" type="Sprite2D" parent="Node2D" unique_id=731518403]
 position = Vector2(-3950, -1670)
 rotation = -0.460043
 scale = Vector2(10, 10)

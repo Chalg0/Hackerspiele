@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv3kydmmliw3o"]
+[gd_scene format=3 uid="uid://cv3kydmmliw3o"]
 
 [ext_resource type="Script" uid="uid://dfks0q6gopwxj" path="res://microgames/coin_collector/levels/level.gd" id="1_xnw8x"]
 [ext_resource type="Texture2D" uid="uid://s7intve38wdm" path="res://microgames/coin_collector/assets/Wall.png" id="1_yqvqs"]
@@ -19,13 +19,13 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_ej3bi")
 sources/1 = SubResource("TileSetAtlasSource_yqvqs")
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1729980448]
 script = ExtResource("1_xnw8x")
 
-[node name="Map" type="TileMapLayer" parent="."]
+[node name="Map" type="TileMapLayer" parent="." unique_id=1452760483]
 tile_set = SubResource("TileSet_brcnt")
 
-[node name="Player" parent="." instance=ExtResource("2_xnw8x")]
+[node name="Player" parent="." unique_id=1879397138 instance=ExtResource("2_xnw8x")]
 SPEED = 3600.0
 
-[node name="Coins" type="Node2D" parent="."]
+[node name="Coins" type="Node2D" parent="." unique_id=307863122]

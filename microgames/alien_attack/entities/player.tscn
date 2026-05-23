@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kflk33pgif8l"]
+[gd_scene format=3 uid="uid://kflk33pgif8l"]
 
 [ext_resource type="Script" uid="uid://bmd70t8fabtsn" path="res://microgames/alien_attack/entities/player.gd" id="1_13hkq"]
 [ext_resource type="Texture2D" uid="uid://l28ss75fwpog" path="res://microgames/alien_attack/assets/textures/player_ship.png" id="2_7o6rb"]
@@ -38,58 +38,58 @@ scale_max = 10.0
 scale_curve = SubResource("CurveTexture_04q8g")
 color_ramp = SubResource("GradientTexture1D_nipx6")
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1245513616]
 scale = Vector2(0.181617, 0.181617)
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_13hkq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=917674100]
 rotation = 1.5708
 texture = ExtResource("2_7o6rb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067891007]
 position = Vector2(60.567, 3.8147e-06)
 shape = SubResource("CapsuleShape2D_10oqn")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1420398668]
 position = Vector2(33.0366, 192.713)
 scale = Vector2(6.03379, 6.03379)
 shape = SubResource("CircleShape2D_allxc")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1233454954]
 position = Vector2(38.5426, -198.219)
 scale = Vector2(6.03379, 6.03379)
 shape = SubResource("CircleShape2D_allxc")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1145518511]
 position = Vector2(-27.5305, -137.652)
 scale = Vector2(6.03379, 6.03379)
 shape = SubResource("CircleShape2D_allxc")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=842526478]
 position = Vector2(-27.5305, 143.158)
 scale = Vector2(6.03379, 6.03379)
 shape = SubResource("CircleShape2D_allxc")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=690224767]
 position = Vector2(-82.5914, -3.05176e-05)
 scale = Vector2(6.03379, 6.03379)
 shape = SubResource("CircleShape2D_allxc")
 
-[node name="RocketContainer" type="Node" parent="."]
+[node name="RocketContainer" type="Node" parent="." unique_id=982919080]
 
-[node name="RocketShotSound" type="AudioStreamPlayer" parent="."]
+[node name="RocketShotSound" type="AudioStreamPlayer" parent="." unique_id=1615544268]
 stream = ExtResource("3_ske58")
 bus = &"Sfx"
 
-[node name="FlameParticleEffect" type="GPUParticles2D" parent="."]
+[node name="FlameParticleEffect" type="GPUParticles2D" parent="." unique_id=1851213959]
 position = Vector2(-165.183, 0)
 amount = 100
 lifetime = 0.3
 process_material = SubResource("ParticleProcessMaterial_4u74y")
 
-[node name="Shoot_Cooldown" type="Timer" parent="."]
+[node name="Shoot_Cooldown" type="Timer" parent="." unique_id=1544736160]
 wait_time = 0.15
 one_shot = true
 

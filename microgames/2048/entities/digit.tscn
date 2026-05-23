@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8if7w0a36kb2"]
+[gd_scene format=3 uid="uid://c8if7w0a36kb2"]
 
 [ext_resource type="Script" uid="uid://deyi6qd0orehw" path="res://microgames/2048/entities/digit.gd" id="1_i3jx4"]
 
@@ -15,7 +15,7 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c257f"]
 size = Vector2(50, 1)
 
-[node name="Digit" type="RigidBody2D"]
+[node name="Digit" type="RigidBody2D" unique_id=513316545]
 collision_layer = 3
 collision_mask = 2
 mass = 100.0
@@ -27,16 +27,16 @@ colors = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 0.4, 1), Color(1, 0.8, 0, 
 start_color = Color(1, 1, 1, 1)
 end_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2064485678]
 shape = SubResource("RectangleShape2D_oex33")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=254882399]
 offset_left = -40.0
 offset_top = -40.0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=49949283]
 offset_left = -40.0
 offset_top = -40.0
 offset_right = 40.0
@@ -46,10 +46,10 @@ label_settings = SubResource("LabelSettings_c257f")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tester" type="Area2D" parent="."]
+[node name="Tester" type="Area2D" parent="." unique_id=1020660552]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tester"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tester" unique_id=1897029212]
 position = Vector2(0, -55)
 shape = SubResource("RectangleShape2D_c257f")
 

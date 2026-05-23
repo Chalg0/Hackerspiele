@@ -1,27 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://lgv8bv8hinkx"]
+[gd_scene format=3 uid="uid://lgv8bv8hinkx"]
 
 [ext_resource type="Script" uid="uid://dc8gw6mf1hhk5" path="res://microgames/responsibility/responsibility.gd" id="1_m5tbx"]
 [ext_resource type="Shader" uid="uid://dgluxy158pipy" path="res://microgames/responsibility/background.gdshader" id="2_k7pvh"]
 [ext_resource type="FontFile" uid="uid://sa1ml6cgmorr" path="res://assets/fonts/Share Tech Mono/ShareTechMono-Regular.ttf" id="3_bxowm"]
 [ext_resource type="Texture2D" uid="uid://2p4glia1radm" path="res://microgames/responsibility/assets/person.svg" id="3_ggckw"]
 [ext_resource type="Texture2D" uid="uid://dxltpixkqs7v8" path="res://microgames/responsibility/assets/arrow.svg" id="5_we2d5"]
-
-[sub_resource type="Animation" id="Animation_ggckw"]
-resource_name = "jump"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:custom_minimum_size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 35), Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_bxowm"]
 length = 0.001
@@ -65,6 +48,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(10, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ggckw"]
+resource_name = "jump"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 35), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_we2d5"]
@@ -163,27 +163,23 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_we2d5"]
 
-[node name="Responsibility" type="Node2D"]
+[node name="Responsibility" type="Node2D" unique_id=726761788]
 script = ExtResource("1_m5tbx")
 time = 9.0
 
-[node name="JumpAnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="JumpAnimationPlayer" type="AnimationPlayer" parent="." unique_id=678577387]
 root_node = NodePath("../CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer")
-libraries = {
-&"": SubResource("AnimationLibrary_we2d5")
-}
-autoplay = "jump"
+libraries/ = SubResource("AnimationLibrary_we2d5")
+autoplay = &"jump"
 
-[node name="JitterAnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="JitterAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1120765314]
 root_node = NodePath("../CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer")
-libraries = {
-&"": SubResource("AnimationLibrary_we2d5")
-}
-autoplay = "jitter"
+libraries/ = SubResource("AnimationLibrary_we2d5")
+autoplay = &"jitter"
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="." unique_id=614928600]
 
-[node name="Background" type="Panel" parent="Background"]
+[node name="Background" type="Panel" parent="Background" unique_id=1733247287]
 material = SubResource("ShaderMaterial_ggckw")
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,9 +187,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=828893567]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=499155773]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -202,63 +198,63 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=208162370]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer2" unique_id=643443228]
 custom_minimum_size = Vector2(35.005, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2" unique_id=1827896664]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1056936457]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_we2d5")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer" unique_id=622934565]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SpeechLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="SpeechLabel" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/PanelContainer/MarginContainer" unique_id=741712003]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_5x86v")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=81740252]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1744546520]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1440742119]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_we2d5")
 stretch_mode = 2
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1251903567]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=919273895]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1086524545]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=373836265]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=555233782]
 modulate = Color(0.89, 0.692717, 0.5785, 1)
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
@@ -267,79 +263,79 @@ texture = ExtResource("3_ggckw")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=59121833]
 layout_mode = 2
 
-[node name="Control2" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=254361965]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Panel2" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="Panel2" type="PanelContainer" parent="CanvasLayer/VBoxContainer" unique_id=1475039677]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bxowm")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/Panel2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/Panel2" unique_id=470363432]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/Panel2/HBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer/Panel2/HBoxContainer" unique_id=1716616583]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="LevelContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/Panel2/HBoxContainer"]
+[node name="LevelContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/Panel2/HBoxContainer" unique_id=630377032]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/Panel2/HBoxContainer/LevelContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/Panel2/HBoxContainer/LevelContainer" unique_id=710828271]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_5x86v")
 stretch_mode = 4
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/VBoxContainer" unique_id=451672693]
 material = SubResource("ShaderMaterial_k7pvh")
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k7pvh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/Panel" unique_id=917603711]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer" unique_id=2101932925]
 layout_mode = 2
 text = "Flee from your responsibilities"
 label_settings = SubResource("LabelSettings_bxowm")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer" unique_id=1665718778]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer" unique_id=947746861]
 layout_mode = 2
 text = "Press"
 label_settings = SubResource("LabelSettings_bxowm")
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer" unique_id=256040176]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5x86v")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer/PanelContainer" unique_id=657442163]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Panel" type="Panel" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1672765263]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_we2d5")
 
-[node name="Arrow" type="TextureRect" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Panel"]
+[node name="Arrow" type="TextureRect" parent="CanvasLayer/VBoxContainer/Panel/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/Panel" unique_id=1657059538]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -351,17 +347,17 @@ texture = ExtResource("5_we2d5")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1178315347]
 
-[node name="Player" type="HBoxContainer" parent="CanvasLayer2"]
+[node name="Player" type="HBoxContainer" parent="CanvasLayer2" unique_id=1161394735]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 0
 
-[node name="Control" type="Control" parent="CanvasLayer2/Player"]
+[node name="Control" type="Control" parent="CanvasLayer2/Player" unique_id=911108791]
 layout_mode = 2
 
-[node name="Texture" type="TextureRect" parent="CanvasLayer2/Player"]
+[node name="Texture" type="TextureRect" parent="CanvasLayer2/Player" unique_id=300046074]
 modulate = Color(0.89, 0.692717, 0.5785, 1)
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
@@ -370,7 +366,7 @@ texture = ExtResource("3_ggckw")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="TextTimer" type="Timer" parent="."]
+[node name="TextTimer" type="Timer" parent="." unique_id=1652294301]
 wait_time = 1.8
 autostart = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bw817h3ir1ujc"]
+[gd_scene format=3 uid="uid://bw817h3ir1ujc"]
 
 [ext_resource type="Script" uid="uid://essncnu813m3" path="res://microgames/martian_mike/utils/start.gd" id="1_gmvj7"]
 [ext_resource type="Texture2D" uid="uid://dlcj0w37rfeff" path="res://microgames/martian_mike/assets/textures/other/Start.png" id="1_sunhl"]
@@ -133,18 +133,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhcdx"]
 size = Vector2(13.1783, 11.0178)
 
-[node name="Start" type="StaticBody2D"]
+[node name="Start" type="StaticBody2D" unique_id=276361512]
 script = ExtResource("1_gmvj7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=33946636]
 position = Vector2(2, -32)
 sprite_frames = SubResource("SpriteFrames_sjtp0")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583668323]
 position = Vector2(13, -4)
 scale = Vector2(2.58, -0.726099)
 shape = SubResource("RectangleShape2D_uhcdx")
 
-[node name="SpawnPosition" type="Marker2D" parent="."]
+[node name="SpawnPosition" type="Marker2D" parent="." unique_id=1893296063]
 position = Vector2(12, -29)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0ltgqegshcb8"]
+[gd_scene format=3 uid="uid://c0ltgqegshcb8"]
 
 [ext_resource type="Script" uid="uid://clicylv1am2xe" path="res://microgames/skiing/entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://bidht0cgkkraa" path="res://microgames/skiing/textures/snowflake.png" id="2_rpfbt"]
@@ -26,28 +26,28 @@ albedo_texture = ExtResource("2_rpfbt")
 material = SubResource("StandardMaterial3D_sglur")
 size = Vector2(0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1954928212]
 collision_mask = 2
 script = ExtResource("1_symyc")
 
-[node name="Character" type="Node3D" parent="."]
+[node name="Character" type="Node3D" parent="." unique_id=1550691080]
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Character"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Character" unique_id=345845577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 smooth_faces = false
 material = SubResource("StandardMaterial3D_abrql")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Character"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Character" unique_id=290778518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1672953912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_abrql")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1757226660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1288363511]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00108433, 1.50746, -6.00381)
 amount = 50
 lifetime = 2.0

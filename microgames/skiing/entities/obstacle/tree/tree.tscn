@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d20tuopu6rand"]
+[gd_scene format=3 uid="uid://d20tuopu6rand"]
 
 [ext_resource type="PackedScene" uid="uid://ca2e44oufqic1" path="res://microgames/skiing/entities/obstacle/obstacle.tscn" id="1_exm61"]
 [ext_resource type="PackedScene" uid="uid://deely3h5eu0sg" path="res://microgames/skiing/entities/obstacle/tree/tree_1.tscn" id="2_ihxpy"]
@@ -13,34 +13,34 @@
 height = 3.9248
 radius = 1.39062
 
-[node name="Tree" instance=ExtResource("1_exm61")]
+[node name="Tree" unique_id=219035482 instance=ExtResource("1_exm61")]
 collision_layer = 2
 collision_mask = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0" unique_id=102098223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0)
 shape = SubResource("CylinderShape3D_de1em")
 
-[node name="TreeMesh" type="Node3D" parent="." index="1"]
+[node name="TreeMesh" type="Node3D" parent="." index="1" unique_id=650860283]
 script = ExtResource("2_w38bo")
 
-[node name="Tree 1_0" parent="TreeMesh" index="0" instance=ExtResource("2_ihxpy")]
+[node name="Tree 1_0" parent="TreeMesh" index="0" unique_id=724302959 instance=ExtResource("2_ihxpy")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.10868, 3.3, -0.407812)
 
-[node name="Tree 2_0" parent="TreeMesh" index="1" instance=ExtResource("4_oyi4f")]
+[node name="Tree 2_0" parent="TreeMesh" index="1" unique_id=234496293 instance=ExtResource("4_oyi4f")]
 visible = false
 
-[node name="Tree 3_0" parent="TreeMesh" index="2" instance=ExtResource("5_vrw3v")]
+[node name="Tree 3_0" parent="TreeMesh" index="2" unique_id=14668109 instance=ExtResource("5_vrw3v")]
 visible = false
 
-[node name="Tree 4_0" parent="TreeMesh" index="3" instance=ExtResource("6_6r5g7")]
+[node name="Tree 4_0" parent="TreeMesh" index="3" unique_id=864941841 instance=ExtResource("6_6r5g7")]
 transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 1.34986, 0)
 visible = false
 
-[node name="Tree 5_0" parent="TreeMesh" index="4" instance=ExtResource("7_43l2l")]
+[node name="Tree 5_0" parent="TreeMesh" index="4" unique_id=752671504 instance=ExtResource("7_43l2l")]
 transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 5.54156, 0)
 visible = false
 
-[node name="Tree 6_0" parent="TreeMesh" index="5" instance=ExtResource("8_mql5y")]
+[node name="Tree 6_0" parent="TreeMesh" index="5" unique_id=1088877529 instance=ExtResource("8_mql5y")]
 transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 2.1129, 14.1221, 0)
 visible = false

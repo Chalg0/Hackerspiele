@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://be4fo7odg3n2b"]
+[gd_scene format=3 uid="uid://be4fo7odg3n2b"]
 
 [ext_resource type="Script" uid="uid://cbadjf313bs60" path="res://microgames/skiing/main.gd" id="1_3ewjk"]
 [ext_resource type="PackedScene" uid="uid://c0ltgqegshcb8" path="res://microgames/skiing/entities/player/player.tscn" id="2_thrc1"]
@@ -21,17 +21,17 @@ plane = Plane(1, 0, 0, 0)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rux8w"]
 plane = Plane(1, 0, 0, 0)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=2102831965]
 script = ExtResource("1_3ewjk")
 time = 15.0
 
-[node name="Player" parent="." instance=ExtResource("2_thrc1")]
+[node name="Player" parent="." unique_id=1361213924 instance=ExtResource("2_thrc1")]
 
-[node name="Obstacles" type="Node3D" parent="."]
+[node name="Obstacles" type="Node3D" parent="." unique_id=653148842]
 
-[node name="Terrain" type="Node3D" parent="."]
+[node name="Terrain" type="Node3D" parent="." unique_id=1452865612]
 
-[node name="Ground" type="CSGBox3D" parent="Terrain"]
+[node name="Ground" type="CSGBox3D" parent="Terrain" unique_id=1213577045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -90)
 layers = 2
 material_override = SubResource("StandardMaterial3D_thrc1")
@@ -39,29 +39,29 @@ use_collision = true
 collision_layer = 2
 size = Vector3(200, 0.5, 200)
 
-[node name="Label3D" type="Label3D" parent="Terrain"]
+[node name="Label3D" type="Label3D" parent="Terrain" unique_id=208774648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -12.9898)
 text = "Drive to bold"
 font_size = 256
 outline_size = 48
 
-[node name="Sign" parent="Terrain" instance=ExtResource("5_rux8w")]
+[node name="Sign" parent="Terrain" unique_id=2091591257 instance=ExtResource("5_rux8w")]
 transform = Transform3D(-0.963645, 0, -0.267188, 0, 1, 0, 0.267188, 0, -0.963645, -2.445, 0, -15.245)
 
-[node name="WorldBorders" type="StaticBody3D" parent="Terrain"]
+[node name="WorldBorders" type="StaticBody3D" parent="Terrain" unique_id=475511163]
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_hprty")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/WorldBorders"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/WorldBorders" unique_id=857325403]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 30, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_hprty")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Terrain/WorldBorders"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Terrain/WorldBorders" unique_id=1590286790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_rux8w")
 
-[node name="Goal" parent="." instance=ExtResource("4_wagi8")]
+[node name="Goal" parent="." unique_id=1598577069 instance=ExtResource("4_wagi8")]
 transform = Transform3D(1, 1.7344e-09, -3.44226e-11, -1.7344e-09, 0.999213, -0.0396784, -3.44226e-11, 0.0396784, 0.999213, 0, 0, -100)
 
 [connection signal="area_entered" from="Goal" to="." method="_on_goal_area_entered"]

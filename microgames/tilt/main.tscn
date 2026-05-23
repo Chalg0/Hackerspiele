@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4nehriuxfoby"]
+[gd_scene format=3 uid="uid://c4nehriuxfoby"]
 
 [ext_resource type="Script" uid="uid://dfnmqui16aovs" path="res://microgames/tilt/main.gd" id="1_j1mdo"]
 [ext_resource type="Script" uid="uid://dpoxxu686sanw" path="res://microgames/tilt/collider.gd" id="2_6milr"]
@@ -14,191 +14,191 @@ friction = 0.0
 bounce = 0.05
 absorbent = true
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=2070867771]
 script = ExtResource("1_j1mdo")
 time = 25.0
 survival = true
 
-[node name="Main" type="StaticBody2D" parent="."]
+[node name="Main" type="StaticBody2D" parent="." unique_id=1888800060]
 physics_interpolation_mode = 1
 position = Vector2(640, 280)
 physics_material_override = SubResource("PhysicsMaterial_kb3li")
 script = ExtResource("2_6milr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Main"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main" unique_id=485190249]
 shape = ExtResource("2_j1mdo")
 
-[node name="TextureRect" type="TextureRect" parent="Main"]
+[node name="TextureRect" type="TextureRect" parent="Main" unique_id=935287262]
 offset_left = -250.0
 offset_top = -10.0
 offset_right = 250.0
 offset_bottom = 10.0
 texture = ExtResource("4_tirhb")
 
-[node name="SecondaryOne" type="StaticBody2D" parent="."]
+[node name="SecondaryOne" type="StaticBody2D" parent="." unique_id=1305652265]
 position = Vector2(300, 550)
 physics_material_override = SubResource("PhysicsMaterial_kb3li")
 script = ExtResource("2_6milr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondaryOne"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondaryOne" unique_id=445952298]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect" type="TextureRect" parent="SecondaryOne"]
+[node name="TextureRect" type="TextureRect" parent="SecondaryOne" unique_id=440921953]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="SecondaryTwo" type="StaticBody2D" parent="."]
+[node name="SecondaryTwo" type="StaticBody2D" parent="." unique_id=680603741]
 position = Vector2(988, 550)
 physics_material_override = SubResource("PhysicsMaterial_kb3li")
 script = ExtResource("2_6milr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondaryTwo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondaryTwo" unique_id=1717813237]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect2" type="TextureRect" parent="SecondaryTwo"]
+[node name="TextureRect2" type="TextureRect" parent="SecondaryTwo" unique_id=874882083]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="0 (red)" type="Area2D" parent="."]
+[node name="0 (red)" type="Area2D" parent="." unique_id=689931981]
 position = Vector2(160, 749)
 script = ExtResource("7_gpmah")
 metadata/type = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="0 (red)"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0 (red)" unique_id=1535916526]
 shape = ExtResource("7_kapg4")
 
-[node name="1 (green)" type="Area2D" parent="."]
+[node name="1 (green)" type="Area2D" parent="." unique_id=42435818]
 position = Vector2(480, 749)
 script = ExtResource("7_gpmah")
 metadata/type = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="1 (green)"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1 (green)" unique_id=10563068]
 shape = ExtResource("7_kapg4")
 
-[node name="2 (blue)" type="Area2D" parent="."]
+[node name="2 (blue)" type="Area2D" parent="." unique_id=826354843]
 position = Vector2(800, 749)
 script = ExtResource("7_gpmah")
 metadata/type = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="2 (blue)"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2 (blue)" unique_id=689524381]
 shape = ExtResource("7_kapg4")
 
-[node name="3 (pink)" type="Area2D" parent="."]
+[node name="3 (pink)" type="Area2D" parent="." unique_id=671346011]
 position = Vector2(1120, 749)
 script = ExtResource("7_gpmah")
 metadata/type = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="3 (pink)"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3 (pink)" unique_id=2054755814]
 shape = ExtResource("7_kapg4")
 
-[node name="red" type="ColorRect" parent="."]
+[node name="red" type="ColorRect" parent="." unique_id=365562303]
 offset_top = 610.0
 offset_right = 320.0
 offset_bottom = 728.0
 color = Color(1, 0, 0, 0.196078)
 
-[node name="green" type="ColorRect" parent="."]
+[node name="green" type="ColorRect" parent="." unique_id=1564268810]
 offset_left = 320.0
 offset_top = 610.0
 offset_right = 640.0
 offset_bottom = 728.0
 color = Color(0, 1, 0, 0.196078)
 
-[node name="blue" type="ColorRect" parent="."]
+[node name="blue" type="ColorRect" parent="." unique_id=882003457]
 offset_left = 640.0
 offset_top = 610.0
 offset_right = 960.0
 offset_bottom = 728.0
 color = Color(0, 0, 1, 0.196078)
 
-[node name="pink" type="ColorRect" parent="."]
+[node name="pink" type="ColorRect" parent="." unique_id=2061441839]
 offset_left = 960.0
 offset_top = 610.0
 offset_right = 1280.0
 offset_bottom = 728.0
 color = Color(1, 0, 1, 0.196078)
 
-[node name="RigidBody2D" type="StaticBody2D" parent="."]
+[node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=1132854745]
 position = Vector2(0, 754)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1160554018]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect" type="TextureRect" parent="RigidBody2D"]
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D" unique_id=1876086898]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="RigidBody2D2" type="StaticBody2D" parent="."]
+[node name="RigidBody2D2" type="StaticBody2D" parent="." unique_id=1348449082]
 position = Vector2(320, 754)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=1235375036]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect" type="TextureRect" parent="RigidBody2D2"]
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D2" unique_id=1355770031]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="RigidBody2D5" type="StaticBody2D" parent="."]
+[node name="RigidBody2D5" type="StaticBody2D" parent="." unique_id=418776187]
 position = Vector2(640, 754)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5" unique_id=1457071841]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect" type="TextureRect" parent="RigidBody2D5"]
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D5" unique_id=1701610326]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="RigidBody2D3" type="StaticBody2D" parent="."]
+[node name="RigidBody2D3" type="StaticBody2D" parent="." unique_id=1102982816]
 position = Vector2(960, 754)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" unique_id=1081422595]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect" type="TextureRect" parent="RigidBody2D3"]
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D3" unique_id=2108037694]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="RigidBody2D4" type="StaticBody2D" parent="."]
+[node name="RigidBody2D4" type="StaticBody2D" parent="." unique_id=1426984477]
 position = Vector2(1280, 754)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1831369591]
 shape = ExtResource("4_hgjtv")
 
-[node name="TextureRect" type="TextureRect" parent="RigidBody2D4"]
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D4" unique_id=267571185]
 offset_left = -150.0
 offset_top = -10.0
 offset_right = 150.0
 offset_bottom = 10.0
 texture = ExtResource("6_tirhb")
 
-[node name="RigidBody2D6" type="StaticBody2D" parent="."]
+[node name="RigidBody2D6" type="StaticBody2D" parent="." unique_id=570106058]
 position = Vector2(1280, 754)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="RigidBody2D6"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="RigidBody2D6" unique_id=1551751466]
 polygon = PackedVector2Array(-150, 0, -805, 0, -806, 1280, -150, 1280, -493, 1388, -981, 1411, -1055, 684, -886, -157, -154, -29)
 
 [connection signal="body_entered" from="0 (red)" to="0 (red)" method="_on_body_entered"]

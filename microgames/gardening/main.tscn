@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://irtk4polkkru"]
+[gd_scene format=3 uid="uid://irtk4polkkru"]
 
 [ext_resource type="Script" uid="uid://dbdny2t3pk0qf" path="res://microgames/gardening/main.gd" id="1_tgf1j"]
 [ext_resource type="Shader" uid="uid://cg8rwj0pr0s6p" path="res://microgames/gardening/grass.gdshader" id="2_m11x1"]
@@ -30,11 +30,11 @@ anti_aliasing = false
 [sub_resource type="LabelSettings" id="LabelSettings_nk4vt"]
 font_size = 22
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1566594285]
 script = ExtResource("1_tgf1j")
 time = 35.0
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1996943028]
 texture_filter = 1
 offset_left = -18.0
 offset_top = 28.0
@@ -43,62 +43,62 @@ offset_bottom = 777.0
 stretch = true
 stretch_shrink = 4
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1674514273]
 handle_input_locally = false
 size = Vector2i(329, 187)
 render_target_update_mode = 4
 
-[node name="Floor" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="Floor" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=154013775]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=764282860]
 transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_7l4c7")
 surface_material_override/0 = SubResource("ShaderMaterial_mtb6u")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1015424292]
 transform = Transform3D(0.919842, -0.117663, -0.374227, 0.392289, 0.275897, 0.877491, 0, -0.953958, 0.29994, -76.9821, 111.758, 15.6769)
 light_energy = 0.5
 shadow_enabled = true
 directional_shadow_mode = 1
 
-[node name="PLAYER" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_kkksr")]
+[node name="PLAYER" parent="SubViewportContainer/SubViewport" unique_id=1475053258 instance=ExtResource("4_kkksr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37735, 0)
 
-[node name="grass_manager" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="grass_manager" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1395523685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
 script = ExtResource("6_kkksr")
 
-[node name="folder_zaun" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="folder_zaun" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=964018927]
 
-[node name="zaun" parent="SubViewportContainer/SubViewport/folder_zaun" instance=ExtResource("6_tgf1j")]
+[node name="zaun" parent="SubViewportContainer/SubViewport/folder_zaun" unique_id=1857046232 instance=ExtResource("6_tgf1j")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -100.189, 0.00765371, 99.2731)
 
-[node name="zaun4" parent="SubViewportContainer/SubViewport/folder_zaun" instance=ExtResource("6_tgf1j")]
+[node name="zaun4" parent="SubViewportContainer/SubViewport/folder_zaun" unique_id=737606952 instance=ExtResource("6_tgf1j")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -100.189, 0.00765371, -99.7923)
 
-[node name="zaun2" parent="SubViewportContainer/SubViewport/folder_zaun" instance=ExtResource("6_tgf1j")]
+[node name="zaun2" parent="SubViewportContainer/SubViewport/folder_zaun" unique_id=1836835658 instance=ExtResource("6_tgf1j")]
 transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 99.7167, 0.00765371, 99.2731)
 
-[node name="zaun3" parent="SubViewportContainer/SubViewport/folder_zaun" instance=ExtResource("6_tgf1j")]
+[node name="zaun3" parent="SubViewportContainer/SubViewport/folder_zaun" unique_id=1869560088 instance=ExtResource("6_tgf1j")]
 transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -100.1, 0.00765371, 99.2731)
 
-[node name="carrot_manager" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="carrot_manager" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=971948933]
 script = ExtResource("6_nk4vt")
 
-[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/carrot_manager"]
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/carrot_manager" unique_id=1048192296]
 wait_time = 0.2
 one_shot = true
 autostart = true
 
-[node name="focus" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_tgf1j")]
+[node name="focus" parent="SubViewportContainer/SubViewport" unique_id=1253704791 instance=ExtResource("7_tgf1j")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1984890867]
 offset = Vector2(20, 41.34)
 transform = Transform2D(1, 0, 0, 1, 20, 41.34)
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1331631088]
 texture_filter = 1
 offset_left = 2.0
 offset_top = 6.0
@@ -107,7 +107,7 @@ offset_bottom = 21.0
 scale = Vector2(3.32422, 2.43746)
 theme_override_styles/panel = SubResource("StyleBoxFlat_tgf1j")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=135115724]
 texture_filter = 1
 offset_left = 19.0
 offset_top = 12.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btrs4kvkl7o2q"]
+[gd_scene format=3 uid="uid://btrs4kvkl7o2q"]
 
 [ext_resource type="Script" uid="uid://bqfgjauxcvgki" path="res://microgames/gardening/player.gd" id="1_v7pio"]
 [ext_resource type="PackedScene" uid="uid://bc0tfq2duophh" path="res://microgames/gardening/assets/hand_open.gltf" id="2_d6gxe"]
@@ -11,31 +11,31 @@
 height = 11.524
 radius = 3.5
 
-[node name="PLAYER" type="Node3D"]
+[node name="PLAYER" type="Node3D" unique_id=761361928]
 script = ExtResource("1_v7pio")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1391430728]
 transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766045, 0, -0.766045, 0.642788, 0.371, 30, 15)
 current = true
 fov = 59.9
 far = 374.08
 
-[node name="hand_anchor" type="Node3D" parent="."]
+[node name="hand_anchor" type="Node3D" parent="." unique_id=1495971294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6273, 0)
 script = ExtResource("2_hc02p")
 
-[node name="hand_grab" parent="hand_anchor" instance=ExtResource("4_fg68n")]
+[node name="hand_grab" parent="hand_anchor" unique_id=51075778 instance=ExtResource("4_fg68n")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0.362377, 0)
 script = ExtResource("4_bkik3")
 
-[node name="hand_open" parent="hand_anchor" instance=ExtResource("2_d6gxe")]
+[node name="hand_open" parent="hand_anchor" unique_id=1620839912 instance=ExtResource("2_d6gxe")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 2.85607, 0)
 script = ExtResource("5_h55ev")
 
-[node name="area" type="Area3D" parent="hand_anchor"]
+[node name="area" type="Area3D" parent="hand_anchor" unique_id=1277234132]
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="hand_anchor/area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hand_anchor/area" unique_id=1591318259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18307, -1.59154)
 shape = SubResource("CylinderShape3D_fg68n")
 

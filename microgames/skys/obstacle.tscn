@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://beownl2r0gdvs"]
+[gd_scene format=3 uid="uid://beownl2r0gdvs"]
 
 [ext_resource type="Script" uid="uid://cmgqijb35xmq8" path="res://microgames/skys/obstacle.gd" id="1_3ie86"]
 [ext_resource type="Script" uid="uid://b0d716mup571e" path="res://microgames/skys/obstacle_area_2d.gd" id="2_4g2vb"]
@@ -21,33 +21,33 @@ fill_to = Vector2(0.5, 0.5)
 repeat = 1
 metadata/_snap_enabled = true
 
-[node name="ObstacleBody" type="RigidBody2D"]
+[node name="ObstacleBody" type="RigidBody2D" unique_id=1814544698]
 z_index = -25
 contact_monitor = true
 max_contacts_reported = 10
 script = ExtResource("1_3ie86")
 
-[node name="CollisionBox" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=1235579245]
 visible = false
 position = Vector2(0, -22.5)
 shape = SubResource("RectangleShape2D_4g2vb")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1027997497]
 script = ExtResource("2_4g2vb")
 
-[node name="CollisionArea" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionArea" type="CollisionShape2D" parent="Area2D" unique_id=1815503308]
 visible = false
 position = Vector2(0, -22.5)
 scale = Vector2(1.01, 1)
 shape = SubResource("RectangleShape2D_4g2vb")
 
-[node name="Mesh" type="MeshInstance2D" parent="."]
+[node name="Mesh" type="MeshInstance2D" parent="." unique_id=1731657126]
 texture_repeat = 2
 position = Vector2(0, -22.5)
 mesh = SubResource("QuadMesh_8egl4")
 texture = SubResource("GradientTexture2D_exg86")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=1873748749]
 position = Vector2(0, -22.5)
 scale = Vector2(1, 2)
 

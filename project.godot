@@ -13,8 +13,8 @@ config_version=5
 config/name="hackerspiele"
 config/description="Eine Minispielsammlung von Hackern für Hacker."
 run/main_scene="uid://bdgy134fdvdkn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/fullsize=false
+config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/stretch_mode=0
 boot_splash/image="uid://44wlppmlhhw5"
 config/icon="uid://wkai5rjkduo4"
 run/canvas_textures/default_texture_filter=0
@@ -40,9 +40,9 @@ bumpers=""
 
 [gui]
 
+theme/default_font_hinting=2
 theme/custom="uid://b2fo7vry15yci"
 theme/custom_font="uid://sa1ml6cgmorr"
-theme/default_font_hinting=2
 
 [input]
 

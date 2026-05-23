@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xqu1t0yrqkg7"]
+[gd_scene format=3 uid="uid://xqu1t0yrqkg7"]
 
 [ext_resource type="Script" uid="uid://c026jn8p1gwq8" path="res://microgames/crabfight/crabfight.gd" id="1_5h8xo"]
 [ext_resource type="PackedScene" uid="uid://03xsx5o3mjgs" path="res://microgames/crabfight/ferris.tscn" id="2_qttyf"]
@@ -42,37 +42,37 @@ bg_color = Color(0.31, 0.198917, 0.1767, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyg7h"]
 size = Vector2(118, 746)
 
-[node name="Crabfight" type="Node2D"]
+[node name="Crabfight" type="Node2D" unique_id=234395381]
 script = ExtResource("1_5h8xo")
 time = 28.0
 
-[node name="GoodFerris" parent="." instance=ExtResource("2_qttyf")]
+[node name="GoodFerris" parent="." unique_id=1757838150 instance=ExtResource("2_qttyf")]
 position = Vector2(149, 402)
 scale = Vector2(0.2, 0.2)
 collision_layer = 3
 collision_mask = 2
 controlled_by_player = true
 
-[node name="BadFerris" parent="." instance=ExtResource("2_qttyf")]
+[node name="BadFerris" parent="." unique_id=1814648323 instance=ExtResource("2_qttyf")]
 position = Vector2(1105, 383)
 scale = Vector2(0.2, 0.2)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2101278019]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=220534951]
 position = Vector2(1009, 1016.5)
 shape = SubResource("RectangleShape2D_qttyf")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=173845782]
 position = Vector2(873, 1017)
 mesh = SubResource("QuadMesh_qttyf")
 texture = SubResource("GradientTexture1D_wu2i0")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=930398445]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1996620102]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -85,7 +85,7 @@ label_settings = SubResource("LabelSettings_wu2i0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer"]
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=15989511]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -98,7 +98,7 @@ label_settings = SubResource("LabelSettings_rabak")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=230340319]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -109,44 +109,44 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 136
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1287239654]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1259230170]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="YourLife" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="YourLife" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=435313663]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_wu2i0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rabak")
 step = 1.0
 
-[node name="OpponentLife" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="OpponentLife" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1015114383]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/background = SubResource("StyleBoxFlat_wu2i0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rabak")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=676853757]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1558119315]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "You"
 label_settings = SubResource("LabelSettings_oyg7h")
 
-[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1554767862]
 layout_mode = 2
 text = "Opponent"
 label_settings = SubResource("LabelSettings_oyg7h")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=888352780]
 layer = -1
 
-[node name="Panel" type="Panel" parent="CanvasLayer2"]
+[node name="Panel" type="Panel" parent="CanvasLayer2" unique_id=536010669]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -154,17 +154,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oyg7h")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=57266274]
 anchor_mode = 0
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2021005097]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2023431533]
 position = Vector2(1325, 249)
 shape = SubResource("RectangleShape2D_oyg7h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1496079266]
 position = Vector2(-46, 252)
 shape = SubResource("RectangleShape2D_oyg7h")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b1o6cug4p1cmk"]
+[gd_scene format=3 uid="uid://b1o6cug4p1cmk"]
 
 [ext_resource type="Script" uid="uid://dealruck57n1x" path="res://microgames/martian_mike/entities/objects/jump_pad.gd" id="1_uvhoh"]
 [ext_resource type="Texture2D" uid="uid://cl6kc1pdjn2eh" path="res://microgames/martian_mike/assets/textures/other/Idle.png" id="2_osldj"]
@@ -79,17 +79,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n1ht"]
 size = Vector2(23, 2)
 
-[node name="JumpPad" type="Area2D"]
+[node name="JumpPad" type="Area2D" unique_id=273294277]
 collision_mask = 2
 script = ExtResource("1_uvhoh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478557324]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_mxkyf")
 animation = &"jump"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948800978]
 position = Vector2(-0.5, -9)
 shape = SubResource("RectangleShape2D_2n1ht")
 
