@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="192mm"
+   height="192mm"
+   viewBox="0 0 192 192"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="gamepad-buttons.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.92725428"
+     inkscape:cx="154.21875"
+     inkscape:cy="205.44526"
+     inkscape:window-width="2214"
+     inkscape:window-height="1412"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1"
+       transform="translate(-11.702446,2.8247283)">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linejoin:round;stroke-miterlimit:1"
+         id="path1"
+         cx="107.54364"
+         cy="35.041309"
+         r="31.677311" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linejoin:round;stroke-miterlimit:1"
+         id="path1-7"
+         cx="107.54364"
+         cy="151.38475"
+         r="31.677311" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linejoin:round;stroke-miterlimit:1"
+         id="path1-9"
+         cx="93.213028"
+         cy="-165.71535"
+         r="31.677311"
+         transform="rotate(90)" />
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linejoin:round;stroke-miterlimit:1"
+         id="path1-7-4"
+         cx="93.213028"
+         cy="-49.37191"
+         r="31.677311"
+         transform="rotate(90)" />
+    </g>
+  </g>
+</svg>

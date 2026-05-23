@@ -4,18 +4,33 @@
 [ext_resource type="PackedScene" uid="uid://1ju8eyujir3q" path="res://framework/models/monitor.glb" id="1_m3mpr"]
 [ext_resource type="Theme" uid="uid://fdu16ilqs3a5" path="res://assets/themes/terminal.tres" id="3_4toer"]
 [ext_resource type="FontFile" uid="uid://cuoy0amwy2mxc" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="3_th5dg"]
+[ext_resource type="FontFile" uid="uid://d1tq3qsi1drne" path="res://assets/fonts/Caveat/Caveat-VariableFont_wght.ttf" id="4_2bbnd"]
 [ext_resource type="Shader" uid="uid://dkq8lgxj4eb0w" path="res://framework/shaders/crt_effect.gdshader" id="4_ekofo"]
 [ext_resource type="ArrayMesh" uid="uid://cr7acoty3n02c" path="res://framework/models/mate.obj" id="4_sndid"]
 [ext_resource type="Texture2D" uid="uid://44wlppmlhhw5" path="res://assets/logos/logo.png" id="5_4xr2k"]
 [ext_resource type="Shader" uid="uid://7ojoo23teqvk" path="res://framework/shaders/glass.tres" id="5_vromf"]
 [ext_resource type="Shader" uid="uid://duxxqg2h0syth" path="res://framework/shaders/mate.tres" id="6_0qgvj"]
 [ext_resource type="Theme" uid="uid://dhp67pf748w06" path="res://assets/themes/notepad.tres" id="6_7jn8m"]
+[ext_resource type="Shader" uid="uid://cex0r7475gtkg" path="res://framework/shaders/sticky_note.gdshader" id="9_fmn24"]
 [ext_resource type="AudioStream" uid="uid://cfr43x8eu62vi" path="res://assets/sounds/GPN23MainTheme.mp3" id="9_yy6u4"]
+[ext_resource type="PackedScene" uid="uid://bx1ob2f7p8ec0" path="res://framework/sticky_note_content.tscn" id="10_ekiss"]
 
 [sub_resource type="Environment" id="Environment_0qgvj"]
-background_energy_multiplier = 10.0
-ambient_light_color = Color(0.944169, 0.797791, 0.702215, 1)
-ambient_light_energy = 14.0
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+reflected_light_source = 1
+ssao_enabled = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekiss"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmn24"]
+font = ExtResource("4_2bbnd")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.40784314)
+shadow_offset = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmn24"]
 
@@ -90,6 +105,23 @@ orientation = 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sndid"]
 albedo_color = Color(0.313146, 0.174428, 0.0210792, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ekiss"]
+viewport_path = NodePath("KlebeNotiz/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekiss"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("9_fmn24")
+shader_parameter/foreground = SubResource("ViewportTexture_ekiss")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2bbnd"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_ekiss")
+size = Vector2(0.625, 0.625)
+subdivide_width = 16
+subdivide_depth = 16
+orientation = 0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4xr2k"]
 render_priority = 0
 shader = ExtResource("5_vromf")
@@ -111,12 +143,11 @@ TERM_W = 38
 TERM_H = 14
 
 [node name="Camera" type="Camera3D" parent="." unique_id=583562549]
-transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.59039e-09, -4.30473e-08, 7.32191, 2.65801, 0)
-projection = 1
-size = 2.26
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1004119598]
+transform = Transform3D(-4.33763e-08, -0.13400352, 0.99098086, 5.402032e-09, 0.99098086, 0.13400352, -1, 1.1165886e-08, -4.226119e-08, 6.2738395, 2.413634, 0.12070489)
 environment = SubResource("Environment_0qgvj")
+projection = 1
+current = true
+size = 2.4510443
 
 [node name="Monitor" parent="." unique_id=1987922712 instance=ExtResource("1_m3mpr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)
@@ -124,14 +155,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 
 [node name="ScreenLayer" type="CanvasLayer" parent="Monitor" unique_id=460234054]
 
 [node name="Label" type="Label" parent="Monitor/ScreenLayer" unique_id=376397318]
+visible = false
+texture_filter = 2
 offset_left = -171.0
 offset_top = 554.0
 offset_right = 207.0
 offset_bottom = 773.0
 theme = ExtResource("6_7jn8m")
-text = "Controls:
-Movement: WASD / D-pad
-Submit: Space / Enter / Bottom Button"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ekiss")
+label_settings = SubResource("LabelSettings_fmn24")
 
 [node name="PoweroffButton" type="Button" parent="Monitor/ScreenLayer" unique_id=1613275055]
 offset_left = 421.0
@@ -244,20 +276,39 @@ mesh = SubResource("QuadMesh_sndid")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_th5dg")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1097819653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28281, 3.92547, 1.97244)
-light_energy = 5.115
-omni_range = 10.0
+[node name="Licht" type="OmniLight3D" parent="." unique_id=1901595826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.816692, 2.7348652, -1.2640743)
+light_energy = 0.2
+shadow_enabled = true
+shadow_bias = 0.01
+omni_range = 32.0
+omni_attenuation = 0.2
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1901595826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71499, 0.982625, -2.08091)
-light_energy = 0.8
-omni_range = 10.0
+[node name="Sonnenlicht" type="DirectionalLight3D" parent="." unique_id=612527855]
+transform = Transform3D(0.37289223, -0.34431207, 0.86162674, -0.81997615, -0.55689156, 0.13232906, 0.4342702, -0.7558578, -0.48998818, 6.9969273, 5.579463, -0.9080229)
+light_energy = 0.6
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+sky_mode = 1
 
 [node name="Tisch" type="MeshInstance3D" parent="." unique_id=778200950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371036, 0)
 mesh = SubResource("QuadMesh_vromf")
 surface_material_override/0 = SubResource("StandardMaterial3D_sndid")
+
+[node name="KlebeNotiz" type="MeshInstance3D" parent="." unique_id=212630298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.002, 1.0823512, -0.12315911)
+mesh = SubResource("QuadMesh_2bbnd")
+
+[node name="SubViewport" type="SubViewport" parent="KlebeNotiz" unique_id=1449206658]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 2
+render_target_update_mode = 1
+
+[node name="StickyNoteContent" parent="KlebeNotiz/SubViewport" unique_id=1269053823 instance=ExtResource("10_ekiss")]
 
 [node name="Mate" type="MeshInstance3D" parent="." unique_id=699001436]
 transform = Transform3D(-0.0446442, 0, -0.528116, 0, 0.53, 0, 0.528116, 0, -0.0446442, 2.35392, 0.42596, 1.58301)

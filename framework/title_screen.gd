@@ -32,7 +32,6 @@ const MICROGAME_PAGE_SIZE := 10
 @onready var logo: Control = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/Logo
 @onready var poweroff_button: MeshInstance3D = $Monitor/PoweroffButton
 @onready var poweroff_button_ui: Button = $Monitor/ScreenLayer/PoweroffButton
-@onready var world_environment: WorldEnvironment = $WorldEnvironment
 @onready var blink_timer: Timer = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/BlinkTimer
 @onready var game_manager: GameManager = get_tree().get_first_node_in_group("game-manager")
 @onready var line_edit: LineEdit = $Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen/LineEdit
@@ -350,8 +349,11 @@ func show_scoreboard(score: int) -> void:
 		push_str("Enter your name:\n")
 		await push_sync()
 		line_edit.clear()
-		line_edit.show()
-		line_edit.grab_focus.call_deferred()
+		print('showing line edit')
+		(func():
+			line_edit.show()
+			line_edit.grab_focus()
+		).call_deferred()
 		line_edit.position = label.position + get_cursor_char_bounds().position
 		var scoreboard_name = await line_edit.text_submitted
 		line_edit.hide()

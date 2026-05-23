@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cqhyjyd8gp40y" path="res://microgames/gardening/assets/hand_grab.tscn" id="4_fg68n"]
 [ext_resource type="Script" uid="uid://dxmob4qlvndul" path="res://microgames/gardening/assets/hand_open.gd" id="5_h55ev"]
 
+[sub_resource type="Environment" id="Environment_h55ev"]
+background_mode = 1
+background_color = Color(0.0489159, 0.1458523, 0.09068898, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fg68n"]
 height = 11.524
 radius = 3.5
@@ -16,6 +22,7 @@ script = ExtResource("1_v7pio")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1391430728]
 transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766045, 0, -0.766045, 0.642788, 0.371, 30, 15)
+environment = SubResource("Environment_h55ev")
 current = true
 fov = 59.9
 far = 374.08

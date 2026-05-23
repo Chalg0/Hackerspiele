@@ -30,6 +30,9 @@ colors = PackedColorArray(0, 0, 0, 0, 0.513726, 0.513726, 0.513726, 1, 0, 0, 0, 
 gradient = SubResource("Gradient_q6y0k")
 width = 20
 
+[sub_resource type="Environment" id="Environment_m1iqg"]
+background_mode = 1
+
 [node name="GameManager" type="Node2D" unique_id=758723163 groups=["game-manager"]]
 script = ExtResource("1_68sdn")
 
@@ -108,6 +111,9 @@ stretch_mode = 0
 [node name="BeepSound" type="AudioStreamPlayer" parent="." unique_id=1987329527]
 stream = ExtResource("3_pqoom")
 bus = &"Ui"
+
+[node name="DefaultEnvironment" type="WorldEnvironment" parent="." unique_id=585169263]
+environment = SubResource("Environment_m1iqg")
 
 [node name="MicrogameSlot" type="Node" parent="." unique_id=1266409341]
 

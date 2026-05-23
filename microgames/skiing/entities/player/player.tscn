@@ -7,6 +7,17 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_abrql"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rpfbt"]
+
+[sub_resource type="Sky" id="Sky_n2ric"]
+sky_material = SubResource("ProceduralSkyMaterial_rpfbt")
+
+[sub_resource type="Environment" id="Environment_vmyd2"]
+background_mode = 2
+sky = SubResource("Sky_n2ric")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sglur"]
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 1)
@@ -46,6 +57,7 @@ shape = SubResource("CapsuleShape3D_abrql")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1757226660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+environment = SubResource("Environment_vmyd2")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1288363511]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00108433, 1.50746, -6.00381)
