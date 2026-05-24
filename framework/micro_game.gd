@@ -2,6 +2,7 @@ class_name MicroGame
 extends Node
 
 enum Result { Loss, Win }
+enum GpnVersion { Gpn23, Gpn24 }
 
 ## The default time for this microgame.
 @export var time := 5.0

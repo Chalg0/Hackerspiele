@@ -45,6 +45,7 @@ var bottle_offset_right := 0.0
 var bottles: Array[MeshInstance3D] = []
 var micro_game_page := 0
 var terminal_buttons: Array[TerminalButton] = []
+var gpn_button: Button
 
 var input_buffer := []
 
@@ -428,7 +429,14 @@ func print_game_title() -> void:
 	put_button("Microgame Select", show_micro_game_select)
 	push_str("\n\n        -> ")
 	put_button("Settings", show_settings)
-	push_str("\n")
+	push_str("\n\n")
+	var gpn_name: String = MicroGames.GpnVersion.find_key(game_manager.gpn_version)
+	put_button(gpn_name.to_upper().remove_chars(" "), next_gpn_version)
+
+func next_gpn_version() -> void:
+	var values := MicroGames.GpnVersion.values()
+	game_manager.gpn_version = values[(values.find(game_manager.gpn_version) + 1) % len(values)]
+	show_title_screen()
 
 func show_micro_game_select(game_idx: int = -1) -> void:
 	clear_terminal()
@@ -436,11 +444,12 @@ func show_micro_game_select(game_idx: int = -1) -> void:
 	if game_idx != -1:
 		micro_game_page = game_idx /  MICROGAME_PAGE_SIZE
 	var game_offset := micro_game_page * MICROGAME_PAGE_SIZE
+	var scenes := game_manager.get_scene_list()
 	for paged_game_idx in range(MICROGAME_PAGE_SIZE):
 		var current_game_idx: int = paged_game_idx + game_offset
-		if current_game_idx >= MicroGames.scenes.size():
+		if current_game_idx >= scenes.size():
 			break
-		var game := MicroGames.scenes[current_game_idx]
+		var game := scenes[current_game_idx]
 		var name := game.resource_path.split("/")[3].capitalize()
 		put_button(name, game_manager.start.bind(current_game_idx), current_game_idx == game_idx)
 		push_str("\n")
@@ -452,7 +461,7 @@ func show_micro_game_select(game_idx: int = -1) -> void:
 			show_micro_game_select()
 		)
 	push_str(" Page: {0} ".format([micro_game_page + 1]))
-	if game_offset + MICROGAME_PAGE_SIZE < MicroGames.scenes.size():
+	if game_offset + MICROGAME_PAGE_SIZE < scenes.size():
 		put_button("Next", func():
 			micro_game_page += 1
 			show_micro_game_select()

@@ -4,3 +4,6 @@
 
 [node name="Main" type="Node2D" unique_id=1302289636]
 script = ExtResource("1_xehrv")
+gpn_version = null
+time = null
+survival = null

@@ -214,6 +214,9 @@ offset_right = 504.0
 offset_bottom = 504.0
 text = "Häckerspiele"
 label_settings = SubResource("LabelSettings_th5dg")
+autowrap_trim_flags = 0
+justification_flags = 0
+clip_text = true
 
 [node name="CursorRect" type="Panel" parent="Monitor/ScreenLayer/SubViewportContainer/SubViewport/Screen" unique_id=1224812656]
 layout_mode = 0
