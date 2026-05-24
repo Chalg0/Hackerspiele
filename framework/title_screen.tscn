@@ -138,7 +138,7 @@ height = 1.8
 
 [node name="TitleScreen" type="Node3D" unique_id=826316367]
 script = ExtResource("1_f6akd")
-PRINT_TIMEOUT = 0.01
+PRINT_TIMEOUT = 0.004
 TERM_W = 38
 TERM_H = 14
 
