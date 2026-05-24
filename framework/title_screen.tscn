@@ -290,7 +290,9 @@ omni_attenuation = 0.2
 [node name="Sonnenlicht" type="DirectionalLight3D" parent="." unique_id=612527855]
 transform = Transform3D(0.37289223, -0.34431207, 0.86162674, -0.81997615, -0.55689156, 0.13232906, 0.4342702, -0.7558578, -0.48998818, 6.9969273, 5.579463, -0.9080229)
 light_energy = 0.6
+light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.01
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 sky_mode = 1
@@ -308,7 +310,6 @@ mesh = SubResource("QuadMesh_2bbnd")
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
-msaa_2d = 2
 render_target_update_mode = 1
 
 [node name="StickyNoteContent" parent="KlebeNotiz/SubViewport" unique_id=1269053823 instance=ExtResource("10_ekiss")]

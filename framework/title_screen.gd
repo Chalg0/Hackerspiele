@@ -450,8 +450,8 @@ func show_micro_game_select(game_idx: int = -1) -> void:
 		if current_game_idx >= scenes.size():
 			break
 		var game := scenes[current_game_idx]
-		var name := game.resource_path.split("/")[3].capitalize()
-		put_button(name, game_manager.start.bind(current_game_idx), current_game_idx == game_idx)
+		var game_name := game.resource_path.split("/")[3].capitalize()
+		put_button(game_name, game_manager.start.bind(current_game_idx), current_game_idx == game_idx)
 		push_str("\n")
 	if micro_game_page == 0:
 		push_str("      ")
