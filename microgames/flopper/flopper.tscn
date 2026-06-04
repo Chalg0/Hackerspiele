@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://drsr418dsa0b"]
+
+[ext_resource type="Texture2D" uid="uid://d1oa3mhcs63uc" path="res://microgames/flopper/assets/flopper.png" id="1_6fa8v"]
+[ext_resource type="Script" uid="uid://d1aujvfj7idn1" path="res://microgames/flopper/flopper.gd" id="1_g2kv0"]
+[ext_resource type="AudioStream" uid="uid://i28eydx6ul8j" path="res://microgames/flopper/assets/chickah.mp3" id="3_xm07i"]
+[ext_resource type="AudioStream" uid="uid://bvxb0hpcqomtw" path="res://microgames/flopper/assets/click.mp3" id="4_vhmav"]
+[ext_resource type="AudioStream" uid="uid://d1qb5mk2xg52q" path="res://microgames/flopper/assets/clock.mp3" id="5_ukset"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2kv0"]
+size = Vector2(20, 62.455673)
+
+[node name="Flopper" type="StaticBody2D" unique_id=1446139469]
+script = ExtResource("1_g2kv0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650368039]
+position = Vector2(35.8, -3)
+scale = Vector2(1.4, 1)
+texture = ExtResource("1_6fa8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=564142088]
+position = Vector2(36.000004, 2.3841858e-07)
+rotation = 1.6772614
+scale = Vector2(0.9999998, 1.4)
+shape = SubResource("RectangleShape2D_g2kv0")
+
+[node name="Chickah" type="AudioStreamPlayer2D" parent="." unique_id=1711962835]
+stream = ExtResource("3_xm07i")
+bus = &"Sfx"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1806914130]
+stream = ExtResource("4_vhmav")
+bus = &"Sfx"
+
+[node name="Clock" type="AudioStreamPlayer2D" parent="." unique_id=1276263710]
+stream = ExtResource("5_ukset")
+bus = &"Sfx"
