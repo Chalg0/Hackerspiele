@@ -14,6 +14,6 @@ void fragment() {
 	if (r2 > .25) discard;
 	float angle = atan2(dc);
 
-	COLOR = vec4(.12, .35, .17, 1.);
+	COLOR = vec4(.22, .45, .67, 1.);
 	if (r2 > .2 || (angle < 0. && angle > -1. && r2 > .08 && r2 < .13)) COLOR.rgb *= .6;
 }

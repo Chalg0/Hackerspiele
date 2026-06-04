@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ca65pvigo228r" path="res://microgames/flopper/ball.gd" id="1_5ect4"]
 [ext_resource type="Shader" uid="uid://cie0pb7yyju0a" path="res://microgames/flopper/ball.gdshader" id="1_6qjpo"]
 [ext_resource type="AudioStream" uid="uid://dp5svufb45rde" path="res://microgames/flopper/assets/bonk.mp3" id="3_g1f6t"]
+[ext_resource type="AudioStream" uid="uid://cu542ukqnvrom" path="res://microgames/flopper/assets/bing.mp3" id="4_g1f6t"]
+[ext_resource type="AudioStream" uid="uid://5vuhsac21id2" path="res://microgames/flopper/assets/kaching.mp3" id="5_1usgc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6qjpo"]
 friction = 1.8
@@ -16,6 +18,7 @@ size = Vector2(20, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1f6t"]
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1898707285]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_6qjpo")
 continuous_cd = 1
 contact_monitor = true
@@ -33,4 +36,12 @@ shape = SubResource("CircleShape2D_g1f6t")
 stream = ExtResource("3_g1f6t")
 bus = &"Sfx"
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Bing" type="AudioStreamPlayer2D" parent="." unique_id=479138512]
+stream = ExtResource("4_g1f6t")
+bus = &"Sfx"
+
+[node name="Kaching" type="AudioStreamPlayer2D" parent="." unique_id=861222711]
+stream = ExtResource("5_1usgc")
+bus = &"Sfx"
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

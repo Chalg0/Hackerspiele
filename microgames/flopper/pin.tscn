@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://is7bimnhmaog"]
+
+[ext_resource type="Texture2D" uid="uid://bailftgt26gv2" path="res://microgames/flopper/assets/pin.png" id="1_o3vrf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o3vrf"]
+friction = 0.5
+bounce = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oomly"]
+radius = 9.0
+
+[node name="Pin" type="StaticBody2D" unique_id=1454620846 groups=["flopper-pin"]]
+physics_material_override = SubResource("PhysicsMaterial_o3vrf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1175740469]
+texture = ExtResource("1_o3vrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=171565673]
+shape = SubResource("CircleShape2D_oomly")

@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @export var is_left: bool
 @export var is_muted: bool
-@export var base_strength := 62_000.
+@export var base_strength := 80_000.
 @export var strength_max_bonus := .25
 @export var bend := .3
 
@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 			var dir := Vector2(-off * bend, -1.).normalized()
 			if is_left: dir.x = -dir.x
 			var strength: float = base_strength * (1. + randf() * strength_max_bonus)
+			strength *= pow(off, .4)
 			ball.apply_central_force(dir * strength)
 			if not is_muted: chickah.play()
 		else:
