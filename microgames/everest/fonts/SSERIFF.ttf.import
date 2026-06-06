@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cvgp8hoir2xxu"
-path="res://.godot/imported/SSERIFF.ttf-5f1fe683ec01648e0193a5202ec0ab25.fontdata"
+uid="uid://cmrep5rgp6jkj"
+path="res://.godot/imported/SSERIFF.ttf-d8d611f7213562cc72416ecac4d52b59.fontdata"
 
 [deps]
 
-source_file="res://microgames/hello/fonts/SSERIFF.ttf"
-dest_files=["res://.godot/imported/SSERIFF.ttf-5f1fe683ec01648e0193a5202ec0ab25.fontdata"]
+source_file="res://microgames/everest/fonts/SSERIFF.ttf"
+dest_files=["res://.godot/imported/SSERIFF.ttf-d8d611f7213562cc72416ecac4d52b59.fontdata"]
 
 [params]
 
