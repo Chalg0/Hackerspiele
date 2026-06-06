@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chuo7jsb2b1sa"]
 
 [ext_resource type="Texture2D" uid="uid://cye3rwdrlnipf" path="res://microgames/hello/textures/window_borders.png" id="2_1rx3i"]
-[ext_resource type="FontFile" uid="uid://cmrep5rgp6jkj" path="res://microgames/everest/fonts/SSERIFF.ttf" id="2_8x2b2"]
+[ext_resource type="FontFile" uid="uid://cmrep5rgp6jkj" path="res://microgames/hello/fonts/SSERIFF.ttf" id="2_8x2b2"]
 [ext_resource type="Script" uid="uid://d0c3kie3rdxkq" path="res://microgames/hello/hello.gd" id="2_gejsk"]
 [ext_resource type="Texture2D" uid="uid://esuw27dlhoxa" path="res://assets/logos/kit_gamejam.png" id="4_8x2b2"]
 [ext_resource type="StyleBox" uid="uid://davr0qw80naqf" path="res://microgames/hello/textures/button_box_texture.tres" id="5_1rx3i"]
