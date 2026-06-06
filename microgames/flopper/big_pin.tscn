@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c73sdilgwwg1v"]
+
+[ext_resource type="Texture2D" uid="uid://yo45ejikaqid" path="res://microgames/flopper/assets/big-pin.png" id="1_hjdqw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hjdqw"]
+friction = 0.2
+bounce = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpvrl"]
+radius = 31.257
+
+[sub_resource type="Animation" id="Animation_hjdqw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qpvrl"]
+resource_name = "expand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axe37"]
+_data = {
+&"RESET": SubResource("Animation_hjdqw"),
+&"expand": SubResource("Animation_qpvrl")
+}
+
+[node name="BigPin" type="StaticBody2D" unique_id=2099100298 groups=["flopper-big-pin"]]
+physics_material_override = SubResource("PhysicsMaterial_hjdqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=541572348]
+texture = ExtResource("1_hjdqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=46584350]
+shape = SubResource("CircleShape2D_qpvrl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=455892319]
+libraries/ = SubResource("AnimationLibrary_axe37")
+playback_auto_capture_transition_type = 5
+speed_scale = 20.0
